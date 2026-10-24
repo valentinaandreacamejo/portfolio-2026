@@ -1,0 +1,45 @@
+<section id="about" class="section container">
+  <header class="section-head" appReveal>
+    <span class="section-head__index">{{ i18n.t('about.index') }}</span>
+    <h2 class="section-head__title about__title">
+      {{ i18n.t('about.title') }} <em>{{ data().name }}</em>
+    </h2>
+    <p class="section-head__lead">
+      {{ i18n.t('about.lead', { name: data().shortName }) }}
+    </p>
+  </header>
+
+  <div class="about">
+    <aside class="about__visual" appReveal>
+      <figure class="about__figure">
+        <img
+          ngSrc="assets/frontend-developer-avatar-fullbody.jpg"
+          width="848"
+          height="1264"
+          [alt]="i18n.t('about.alt', { name: data().name })"
+        />
+      </figure>
+      <span class="about__sticker about__sticker--route">VE → IE → IT</span>
+      <span class="about__sticker about__sticker--lang">{{ data().languages.join(' · ') }}</span>
+      <span class="about__sticker about__sticker--soul">Fashion × Code</span>
+    </aside>
+
+    <ol class="about__chapters">
+      @for (chapter of chapters(); track chapter.id; let i = $index) {
+        <li class="chapter" [class]="'accent-' + chapter.accent" appReveal [revealDelay]="i * 80">
+          <div class="chapter__head">
+            <span class="chapter__index">{{ chapter.index }}</span>
+            <span class="chapter__kicker">{{ chapter.kicker }}</span>
+          </div>
+          <h3 class="chapter__title">{{ chapter.title }}</h3>
+          <p class="chapter__body">{{ chapter.body }}</p>
+          <ul class="chapter__highlights">
+            @for (item of chapter.highlights; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,136 @@
+@use 'mixins' as *;
+
+// ---------- Accent helpers: set --accent on any element ----------
+@each $name in 'violet', 'pink', 'lime', 'sky' {
+  .accent-#{$name} {
+    --accent: var(--color-accent-#{$name});
+  }
+}
+
+// lime needs dark text on top; the others read well with white
+.accent-violet,
+.accent-pink,
+.accent-sky {
+  --on-accent: #fff;
+}
+
+.accent-lime {
+  --on-accent: var(--color-dark);
+}
+
+// ---------- Buttons ----------
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  padding: 1em 1.6em;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 2px solid var(--color-dark);
+  border-radius: var(--radius-pill);
+  transition:
+    transform 0.35s var(--ease-spring),
+    box-shadow 0.35s var(--ease-out-expo),
+    background-color 0.25s;
+
+  &:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 4px 4px 0 var(--color-dark);
+  }
+
+  &:active {
+    transform: translate(0, 0);
+    box-shadow: none;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--color-accent-violet);
+    outline-offset: 3px;
+  }
+
+  &--primary {
+    background: var(--color-dark);
+    color: var(--color-accent-lime);
+
+    &:hover {
+      box-shadow: 4px 4px 0 var(--color-accent-pink);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: var(--color-dark);
+
+    &:hover {
+      background: var(--color-accent-lime);
+    }
+  }
+}
+
+// ---------- Section heading ----------
+.section-head {
+  display: grid;
+  // minmax(0, …) keeps long translated words from widening the page on phones
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  margin-bottom: clamp(40px, 6vw, 72px);
+
+  &__index {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent-violet);
+  }
+
+  &__title {
+    max-width: 16ch;
+    overflow-wrap: break-word;
+
+    em {
+      font-style: normal;
+      @include gradient-text;
+    }
+  }
+
+  &__lead {
+    max-width: 56ch;
+    font-size: 1.1rem;
+    color: color-mix(in srgb, var(--color-dark) 70%, transparent);
+  }
+}
+
+// ---------- Scroll reveal (driven by RevealDirective) ----------
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.9s var(--ease-out-expo),
+    transform 0.9s var(--ease-out-expo);
+  transition-delay: var(--reveal-delay, 0ms);
+
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@include reduced-motion {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

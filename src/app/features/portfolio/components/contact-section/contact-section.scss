@@ -1,0 +1,144 @@
+@use 'mixins' as *;
+
+.contact {
+  position: relative;
+  display: grid;
+  // minmax(0, …) stops long words from widening the column past the box.
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: clamp(24px, 6vw, 80px);
+  overflow: hidden;
+  background: var(--color-dark);
+  color: var(--color-bg);
+  border-radius: var(--radius-lg);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -20%;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: var(--gradient-hero);
+    filter: blur(90px);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__index {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent-lime);
+  }
+
+  &__title {
+    max-width: 14ch;
+    font-size: clamp(1.5rem, 7vw, 6.5rem);
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+  }
+
+  &__highlight {
+    color: var(--color-accent-lime);
+  }
+
+  &__lead {
+    max-width: 46ch;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    opacity: 0.8;
+  }
+
+  &__actions {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    // tablets: the long email gets a full row, LinkedIn + CV share the next one
+    @include up(md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      .tile--email {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @include up(lg) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      .tile--email {
+        grid-column: auto;
+      }
+    }
+  }
+}
+
+.tile {
+  display: grid;
+  // minmax(0, …) lets long values (the email) wrap instead of widening the tile
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.4rem;
+  padding: clamp(1.1rem, 4vw, 1.5rem);
+  text-align: left;
+  color: var(--color-dark);
+  border: 2px solid var(--color-dark);
+  border-radius: var(--radius-md);
+  transition:
+    transform 0.4s var(--ease-spring),
+    box-shadow 0.4s var(--ease-out-expo);
+
+  &:hover {
+    transform: translate(-4px, -4px) rotate(-1deg);
+    box-shadow: 6px 6px 0 var(--color-bg);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--color-accent-lime);
+    outline-offset: 3px;
+  }
+
+  &--email {
+    background: var(--color-accent-lime);
+  }
+
+  // the address is much longer than the other values: smaller type keeps it on 1–2 lines
+  &--email &__value {
+    font-size: clamp(0.9rem, 1.45vw, 1.05rem);
+  }
+
+  &--linkedin {
+    background: var(--color-accent-sky);
+  }
+
+  &--cv {
+    background: var(--color-accent-pink);
+  }
+
+  &__label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__value {
+    font-family: var(--font-headline);
+    font-size: clamp(0.95rem, 2vw, 1.4rem);
+    font-weight: 800;
+    // last resort only: the template already offers a clean break after "@"
+    overflow-wrap: anywhere;
+  }
+
+  &__hint {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    opacity: 0.75;
+  }
+}

@@ -1,0 +1,50 @@
+<article
+  class="card"
+  [class]="'accent-' + project().accent"
+  (pointermove)="onPointerMove($event)"
+  (pointerleave)="resetPointer()"
+  [style.--px]="pointer().x"
+  [style.--py]="pointer().y"
+>
+  <div class="card__cover" aria-hidden="true">
+    <span class="card__glyph">{{ project().glyph }}</span>
+    <span class="card__number">{{ number() }}</span>
+    <div class="card__shine"></div>
+  </div>
+
+  <div class="card__body">
+    <ul class="card__categories">
+      @for (label of categoryLabels(); track label) {
+        <li>{{ label }}</li>
+      }
+    </ul>
+
+    <h3 class="card__title">
+      @if (project().liveUrl; as url) {
+        <!-- stretched link: its ::after covers the whole card, so the card itself is clickable -->
+        <a class="card__title-link" [href]="url" target="_blank" rel="noopener noreferrer">
+          {{ project().title }}<span class="sr-only"> {{ i18n.t('projects.card.newTab') }}</span>
+        </a>
+      } @else {
+        {{ project().title }}
+      }
+    </h3>
+    <p class="card__subtitle">{{ project().subtitle }}</p>
+    <p class="card__description">{{ project().description }}</p>
+
+    <ul class="card__tags">
+      @for (tag of project().tags; track tag) {
+        <li>#{{ tag }}</li>
+      }
+    </ul>
+
+    @if (project().liveUrl; as url) {
+      <a class="card__link" [href]="url" target="_blank" rel="noopener noreferrer">
+        {{ i18n.t('projects.card.live') }}
+        <span class="sr-only">{{ project().title }} {{ i18n.t('projects.card.newTab') }}</span>
+      </a>
+    } @else {
+      <span class="card__link card__link--muted">{{ i18n.t('projects.card.soon') }}</span>
+    }
+  </div>
+</article>

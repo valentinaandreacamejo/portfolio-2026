@@ -1,0 +1,36 @@
+<section id="skills" class="section container">
+  <header class="section-head" appReveal>
+    <span class="section-head__index">{{ i18n.t('skills.index') }}</span>
+    <h2 class="section-head__title">{{ i18n.t('skills.title.pre') }}<em>{{ i18n.t('skills.title.em') }}</em>{{ i18n.t('skills.title.post') }}</h2>
+    <p class="section-head__lead">
+      {{ i18n.t('skills.lead', { count: totalSkills() }) }}
+    </p>
+  </header>
+
+  <div class="stack" (mouseleave)="focused.set(null)" (focusout)="focused.set(null)">
+    @for (group of groups(); track group.id; let i = $index) {
+      <article
+        class="group"
+        [class]="'accent-' + group.accent"
+        [class.is-dimmed]="focused() !== null && focused() !== group.id"
+        [class.is-focused]="focused() === group.id"
+        tabindex="0"
+        (mouseenter)="focused.set(group.id)"
+        (focusin)="focused.set(group.id)"
+        appReveal
+        [revealDelay]="i * 80"
+      >
+        <div class="group__head">
+          <span class="group__icon" aria-hidden="true">{{ group.icon }}</span>
+          <span class="group__count">{{ group.skills.length }}</span>
+        </div>
+        <h3 class="group__label">{{ group.label }}</h3>
+        <ul class="group__skills">
+          @for (skill of group.skills; track skill; let j = $index) {
+            <li class="badge" [style.--i]="j">{{ skill }}</li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+</section>

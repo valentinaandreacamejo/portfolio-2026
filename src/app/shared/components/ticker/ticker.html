@@ -1,0 +1,22 @@
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__row ticker__row--top">
+    <div class="ticker__track">
+      @for (copy of copies; track copy) {
+        @for (item of top(); track $index) {
+          <span class="ticker__item">{{ item }}</span>
+          <span class="ticker__sep">———</span>
+        }
+      }
+    </div>
+  </div>
+  <div class="ticker__row ticker__row--bottom">
+    <div class="ticker__track ticker__track--reverse">
+      @for (copy of copies; track copy) {
+        @for (item of bottom(); track $index) {
+          <span class="ticker__item">{{ item }}</span>
+          <span class="ticker__sep">●</span>
+        }
+      }
+    </div>
+  </div>
+</div>

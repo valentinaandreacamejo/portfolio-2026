@@ -1,0 +1,35 @@
+<section id="contact" class="section container">
+  <div class="contact" appReveal>
+    <span class="contact__index">{{ i18n.t('contact.index') }}</span>
+    <h2 class="contact__title">
+      {{ i18n.t('contact.title.pre') }}<span class="contact__highlight">{{
+        i18n.t('contact.title.highlight')
+      }}</span>
+    </h2>
+    <p class="contact__lead">
+      {{ i18n.t('contact.lead') }}
+    </p>
+
+    <div class="contact__actions">
+      <button type="button" class="tile tile--email" (click)="copyEmail()">
+        <span class="tile__label">{{ i18n.t('contact.email.label') }}</span>
+        <span class="tile__value">{{ emailUser() }}&#64;<wbr />{{ emailDomain() }}</span>
+        <span class="tile__hint" aria-live="polite">
+          {{ i18n.t(copied() ? 'contact.email.copied' : 'contact.email.copy') }}
+        </span>
+      </button>
+
+      <a class="tile tile--linkedin" [href]="profile().linkedinUrl" target="_blank" rel="noopener">
+        <span class="tile__label">LinkedIn</span>
+        <span class="tile__value">{{ i18n.t('contact.linkedin.value') }}</span>
+        <span class="tile__hint">{{ i18n.t('contact.linkedin.hint') }}</span>
+      </a>
+
+      <a class="tile tile--cv" [href]="profile().cvUrl" download>
+        <span class="tile__label">{{ i18n.t('contact.cv.label') }}</span>
+        <span class="tile__value">{{ i18n.t('contact.cv.value') }}</span>
+        <span class="tile__hint">PDF ↓</span>
+      </a>
+    </div>
+  </div>
+</section>

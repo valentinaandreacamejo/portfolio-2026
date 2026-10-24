@@ -1,0 +1,55 @@
+<header class="header container">
+  <a href="#home" class="header__logo" [attr.aria-label]="i18n.t('nav.home', { name: profile().name })">
+    {{ profile().shortName }}<span class="header__slash">.</span>
+  </a>
+
+  @if (profile().available) {
+    <span class="header__badge">
+      <span class="header__dot" aria-hidden="true"></span>
+      {{ i18n.t('header.available') }}
+    </span>
+  }
+
+  <nav id="main-nav" class="header__nav" [class.is-open]="menuOpen()" [attr.aria-label]="i18n.t('nav.label')">
+    @for (link of links; track link.anchor) {
+      <a class="header__link" [href]="'#' + link.anchor" (click)="menuOpen.set(false)">
+        [{{ i18n.t(link.label) }}]
+      </a>
+    }
+    <!-- phones: the bar has no room, so the switcher lives at the bottom of the menu -->
+    <ng-container [ngTemplateOutlet]="langSwitch" [ngTemplateOutletContext]="{ place: 'menu' }" />
+  </nav>
+
+  <ng-container [ngTemplateOutlet]="langSwitch" [ngTemplateOutletContext]="{ place: 'bar' }" />
+
+  <ng-template #langSwitch let-place="place">
+    <div class="lang" [class]="'lang--' + place" role="group" [attr.aria-label]="i18n.t('lang.label')">
+      @for (language of i18n.languages; track language.code) {
+        <button
+          type="button"
+          class="lang__btn"
+          [class.is-active]="i18n.lang() === language.code"
+          [attr.aria-pressed]="i18n.lang() === language.code"
+          [attr.aria-label]="language.name"
+          [attr.lang]="language.code"
+          [title]="language.name"
+          (click)="i18n.setLanguage(language.code)"
+        >
+          [{{ language.label }}]
+        </button>
+      }
+    </div>
+  </ng-template>
+
+  <button
+    class="header__burger"
+    type="button"
+    [attr.aria-expanded]="menuOpen()"
+    aria-controls="main-nav"
+    (click)="toggleMenu()"
+  >
+    <span class="sr-only">{{ i18n.t('nav.menu') }}</span>
+    <span class="header__burger-line"></span>
+    <span class="header__burger-line"></span>
+  </button>
+</header>

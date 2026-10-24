@@ -1,0 +1,46 @@
+<section id="timeline" class="section container">
+  <header class="section-head" appReveal>
+    <span class="section-head__index">{{ i18n.t('timeline.index') }}</span>
+    <h2 class="section-head__title">{{ i18n.t('timeline.title.pre') }} <em>{{ i18n.t('timeline.title.em') }}</em>.</h2>
+  </header>
+
+  <div class="tabs" role="group" [attr.aria-label]="i18n.t('timeline.filter.label')">
+    @for (filter of filters; track filter.id) {
+      <button
+        type="button"
+        class="tabs__btn"
+        [class.is-active]="active() === filter.id"
+        [attr.aria-pressed]="active() === filter.id"
+        (click)="active.set(filter.id)"
+      >
+        {{ i18n.t(filter.label) }}
+      </button>
+    }
+  </div>
+
+  <ol class="timeline">
+    @for (item of items(); track item.id) {
+      <li class="entry" [class.entry--education]="item.kind === 'education'">
+        <span class="entry__dot" [class.is-current]="item.current" aria-hidden="true"></span>
+
+        <div class="entry__meta">
+          <span class="entry__kind">{{ i18n.t(item.kind === 'work' ? 'timeline.kind.work' : 'timeline.kind.education') }}</span>
+          @if (item.period) {
+            <span class="entry__period">{{ item.period }}</span>
+          }
+        </div>
+
+        <div class="entry__card">
+          <h3 class="entry__role">{{ item.role }}</h3>
+          <p class="entry__org">@ {{ item.organization }}</p>
+          <p class="entry__desc">{{ item.description }}</p>
+          <ul class="entry__tags">
+            @for (tag of item.tags; track tag) {
+              <li>{{ tag }}</li>
+            }
+          </ul>
+        </div>
+      </li>
+    }
+  </ol>
+</section>

@@ -1,0 +1,44 @@
+@use 'mixins' as *;
+
+.footer {
+  padding-block: 2rem 2.5rem;
+
+  &__big {
+    font-family: var(--font-headline);
+    font-size: clamp(2.5rem, 11vw, 11rem);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    @include gradient-text;
+  }
+
+  &__signature {
+    margin-top: 1.25rem;
+    font-family: var(--font-headline);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  &__bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem 2rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    border-top: 2px solid var(--color-dark);
+  }
+
+  &__top {
+    font-weight: 700;
+
+    &:hover {
+      color: var(--color-accent-pink);
+    }
+  }
+}

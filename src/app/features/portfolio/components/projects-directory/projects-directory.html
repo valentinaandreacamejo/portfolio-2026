@@ -1,0 +1,49 @@
+<section id="projects" class="section container">
+  <header class="section-head" appReveal>
+    <span class="section-head__index">{{ i18n.t('projects.index') }}</span>
+    <h2 class="section-head__title">
+      {{ i18n.t('projects.title.pre') }}<em>{{ i18n.t('projects.title.em') }}</em>{{ i18n.t('projects.title.post') }}
+    </h2>
+    <p class="section-head__lead">
+      {{ i18n.t('projects.lead') }}
+    </p>
+  </header>
+
+  <div class="filters" role="group" [attr.aria-label]="i18n.t('projects.filter.label')">
+    <button
+      type="button"
+      class="filters__btn"
+      [class.is-active]="active() === null"
+      [attr.aria-pressed]="active() === null"
+      (click)="active.set(null)"
+    >
+      {{ i18n.t('projects.filter.all') }} <sup>{{ total() }}</sup>
+    </button>
+    @for (category of categories(); track category) {
+      <button
+        type="button"
+        class="filters__btn"
+        [class.is-active]="active() === category"
+        [attr.aria-pressed]="active() === category"
+        (click)="active.set(category)"
+      >
+        {{ i18n.t(categoryKeys[category]) }} <sup>{{ countFor(category) }}</sup>
+      </button>
+    }
+  </div>
+
+  <ul class="grid">
+    @for (project of visible(); track project.id; let i = $index) {
+      <li class="grid__item">
+        <app-project-card-interactive [project]="project" [index]="i" />
+      </li>
+    }
+    <li class="grid__item">
+      <div class="coming-soon">
+        <span class="coming-soon__plus" aria-hidden="true">+</span>
+        <p class="coming-soon__label">{{ i18n.t('projects.comingSoon') }}</p>
+        <a href="#contact" class="coming-soon__cta">{{ i18n.t('projects.comingSoon.cta') }}</a>
+      </div>
+    </li>
+  </ul>
+</section>

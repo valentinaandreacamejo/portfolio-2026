@@ -1,0 +1,70 @@
+// =============================================================
+// Design tokens — Portfolio 2026
+// SCSS variables for compile-time use, CSS custom properties for runtime.
+// =============================================================
+
+// ---------- Colors ----------
+$color-bg: #fafafc;
+$color-dark: #121316;
+$color-accent-violet: #8b5cf6;
+$color-accent-pink: #ec4899;
+$color-accent-lime: #ccff00;
+$color-accent-sky: #06b6d4;
+$color-card: rgba(255, 255, 255, 0.9);
+$color-card-border: rgba(0, 0, 0, 0.08);
+
+// ---------- Typography ----------
+$font-headline: 'Syne', 'Space Grotesk', system-ui, sans-serif;
+$font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+$font-mono: 'Space Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+// ---------- Spacing / radius / motion ----------
+$radius-sm: 8px;
+$radius-md: 16px;
+$radius-lg: 28px;
+$radius-pill: 999px;
+
+$ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+$ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// ---------- Breakpoints ----------
+$breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+);
+
+:root {
+  --color-bg: #{$color-bg};
+  --color-dark: #{$color-dark};
+  --color-accent-violet: #{$color-accent-violet};
+  --color-accent-pink: #{$color-accent-pink};
+  --color-accent-lime: #{$color-accent-lime};
+  --color-accent-sky: #{$color-accent-sky};
+  --color-card: #{$color-card};
+  --color-card-border: #{$color-card-border};
+
+  --gradient-hero: linear-gradient(
+    120deg,
+    var(--color-accent-violet) 0%,
+    var(--color-accent-pink) 45%,
+    var(--color-accent-sky) 100%
+  );
+
+  --font-headline: #{$font-headline};
+  --font-body: #{$font-body};
+  --font-mono: #{$font-mono};
+
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-pill: #{$radius-pill};
+
+  --ease-out-expo: #{$ease-out-expo};
+  --ease-spring: #{$ease-spring};
+
+  --container-max: 1280px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --section-space: clamp(80px, 12vw, 160px);
+}

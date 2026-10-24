@@ -1,0 +1,59 @@
+<section id="home" class="hero">
+  <div class="hero__blob hero__blob--violet" aria-hidden="true"></div>
+  <div class="hero__blob hero__blob--pink" aria-hidden="true"></div>
+  <div class="hero__blob hero__blob--sky" aria-hidden="true"></div>
+
+  <div class="hero__grid container">
+    <div class="hero__copy">
+      <span class="hero__tag">{{ i18n.t('hero.tag') }}</span>
+
+      <p class="hero__hello">
+        {{ i18n.t('hero.hello') }} <strong>{{ profile().shortName }}</strong> <span class="hero__wave">👋</span>
+      </p>
+
+      <h1 class="hero__title">
+        {{ i18n.t('hero.title.pre') }}
+        <span class="hero__outline">{{ i18n.t('hero.title.outline') }}</span>
+        {{ i18n.t('hero.title.where') }} <em>{{ i18n.t('hero.title.fashion') }}</em>
+        {{ i18n.t('hero.title.meets') }} <span class="hero__code">{{ i18n.t('hero.title.code') }}</span>
+      </h1>
+
+      <p class="hero__sub">{{ i18n.t('hero.sub') }}</p>
+
+      <p class="hero__lead">{{ i18n.t('hero.lead') }}</p>
+
+      <div class="hero__ctas">
+        <a href="#projects" class="btn btn--primary">{{ i18n.t('hero.cta.projects') }}</a>
+        <a href="#contact" class="btn btn--ghost">{{ i18n.t('hero.cta.contact') }}</a>
+      </div>
+    </div>
+
+    <div
+      class="hero__showcase"
+      (pointermove)="onPointerMove($event)"
+      (pointerleave)="resetTilt()"
+      [style.--tx]="tilt().x"
+      [style.--ty]="tilt().y"
+    >
+      <figure class="hero__card">
+        <img
+          ngSrc="assets/frontend-developer-avatar.jpg"
+          width="1024"
+          height="1024"
+          priority
+          [alt]="i18n.t('hero.alt', { name: profile().name })"
+        />
+        <figcaption class="hero__caption">
+          <span>{{ profile().role }}</span>
+          <span class="hero__caption-dot" aria-hidden="true"></span>
+        </figcaption>
+      </figure>
+
+      <span class="hero__sticker hero__sticker--age">{{ i18n.t('hero.sticker.age', { age: profile().age }) }}</span>
+      <span class="hero__sticker hero__sticker--lang">{{
+        i18n.t('hero.sticker.languages', { count: profile().languages.length })
+      }}</span>
+      <span class="hero__sticker hero__sticker--ai">{{ i18n.t('hero.sticker.ai') }}</span>
+    </div>
+  </div>
+</section>

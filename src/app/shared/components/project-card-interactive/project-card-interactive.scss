@@ -1,0 +1,175 @@
+@use 'mixins' as *;
+
+:host {
+  display: block;
+  height: 100%;
+  perspective: 1200px;
+}
+
+.card {
+  --px: 0.5;
+  --py: 0.5;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  @include card;
+  border: 2px solid var(--color-dark);
+  transform: rotateY(calc((var(--px) - 0.5) * 10deg)) rotateX(calc((var(--py) - 0.5) * -10deg));
+  transition:
+    transform 0.5s var(--ease-out-expo),
+    box-shadow 0.4s var(--ease-out-expo);
+
+  &:hover {
+    box-shadow: 8px 8px 0 var(--accent);
+  }
+
+  &__cover {
+    position: relative;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.35), transparent 50%),
+      var(--accent);
+    color: var(--on-accent);
+    border-bottom: 2px solid var(--color-dark);
+  }
+
+  &__glyph {
+    font-family: var(--font-headline);
+    font-size: clamp(4rem, 10vw, 7rem);
+    font-weight: 800;
+    line-height: 1;
+    transform: translate(calc((var(--px) - 0.5) * -24px), calc((var(--py) - 0.5) * -24px))
+      rotate(-6deg);
+    transition: transform 0.5s var(--ease-out-expo);
+  }
+
+  &:hover &__glyph {
+    transform: translate(calc((var(--px) - 0.5) * -24px), calc((var(--py) - 0.5) * -24px))
+      rotate(4deg) scale(1.12);
+  }
+
+  &__number {
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  &__shine {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at calc(var(--px) * 100%) calc(var(--py) * 100%),
+      rgba(255, 255, 255, 0.45),
+      transparent 45%
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &:hover &__shine {
+    opacity: 1;
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+  }
+
+  &__categories,
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+  }
+
+  &__categories li {
+    padding: 0.25em 0.7em;
+    background: var(--color-dark);
+    color: var(--color-bg);
+    border-radius: var(--radius-pill);
+  }
+
+  &__title {
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    overflow-wrap: anywhere;
+  }
+
+  &__title-link {
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: inherit;
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      &::after {
+        outline: 3px solid var(--color-accent-violet);
+        outline-offset: -5px;
+      }
+    }
+  }
+
+  &:hover &__title-link {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 4px;
+  }
+
+  &__subtitle {
+    font-weight: 700;
+  }
+
+  &__description {
+    color: color-mix(in srgb, var(--color-dark) 70%, transparent);
+  }
+
+  &__tags {
+    margin-top: auto;
+    color: color-mix(in srgb, var(--color-dark) 60%, transparent);
+  }
+
+  &__link {
+    // sits above the stretched title link so it stays its own click/focus target
+    position: relative;
+    z-index: 2;
+    align-self: flex-start;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--accent);
+
+    &--muted {
+      opacity: 0.5;
+      border-bottom-style: dashed;
+    }
+  }
+}
+
+@media (hover: none) {
+  .card {
+    transform: none;
+  }
+}
