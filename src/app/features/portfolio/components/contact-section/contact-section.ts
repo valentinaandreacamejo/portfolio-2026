@@ -1,10 +1,11 @@
 import { Component, DestroyRef, computed, inject, signal } from '@angular/core';
 import { Profile } from '../../../../core/services/profile';
 import { TranslationService } from '../../../../core/services/translation.service';
+import { CvDialog } from '../../../../shared/components/cv-dialog/cv-dialog';
 import { Reveal } from '../../../../shared/directives/reveal';
 
 @Component({
-  imports: [Reveal],
+  imports: [Reveal, CvDialog],
   selector: 'app-contact-section',
   styleUrl: './contact-section.scss',
   templateUrl: './contact-section.html',

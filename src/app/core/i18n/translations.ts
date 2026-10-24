@@ -157,6 +157,12 @@ const en = {
   'contact.linkedin.hint': 'Open profile ↗',
   'contact.cv.label': 'Résumé',
   'contact.cv.value': 'Download CV',
+  'contact.cv.hint': '3 languages · PDF ↓',
+  'cv.kicker': 'Résumé — PDF',
+  'cv.title': 'Download my CV',
+  'cv.lead': 'Same story, three languages. Pick the one that suits you.',
+  'cv.current': 'Current language',
+  'cv.close': 'Close',
 
   // ---------- Footer ----------
   'footer.signature': 'Designed & coded with 🖤 by {name}',
@@ -313,6 +319,12 @@ const it: Dictionary = {
   'contact.linkedin.hint': 'Apri il profilo ↗',
   'contact.cv.label': 'Curriculum',
   'contact.cv.value': 'Scarica il CV',
+  'contact.cv.hint': '3 lingue · PDF ↓',
+  'cv.kicker': 'Curriculum — PDF',
+  'cv.title': 'Scarica il mio CV',
+  'cv.lead': 'Stessa storia, tre lingue. Scegli quella che preferisci.',
+  'cv.current': 'Lingua attuale',
+  'cv.close': 'Chiudi',
 
   'footer.signature': 'Progettato e sviluppato con 🖤 da {name}',
   'footer.rights': '© {year} {name}. Tutti i diritti riservati.',
@@ -466,6 +478,12 @@ const es: Dictionary = {
   'contact.linkedin.hint': 'Abrir perfil ↗',
   'contact.cv.label': 'Currículum',
   'contact.cv.value': 'Descargar CV',
+  'contact.cv.hint': '3 idiomas · PDF ↓',
+  'cv.kicker': 'Currículum — PDF',
+  'cv.title': 'Descarga mi CV',
+  'cv.lead': 'La misma historia, en tres idiomas. Elige el que prefieras.',
+  'cv.current': 'Idioma actual',
+  'cv.close': 'Cerrar',
 
   'footer.signature': 'Diseñado y programado con 🖤 por {name}',
   'footer.rights': '© {year} {name}. Todos los derechos reservados.',

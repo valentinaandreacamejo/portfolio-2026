@@ -51,23 +51,37 @@
     border-radius: var(--radius-pill);
     background: var(--color-bg);
 
+    // phones: the figure spans the full width, so stickers stay inside it;
+    // from lg there is room for them to hang over the edge
     &--route {
       top: 18%;
-      right: -2%;
+      right: 2%;
       rotate: 6deg;
       background: var(--color-accent-lime);
+
+      @include up(lg) {
+        right: -2%;
+      }
     }
 
     &--lang {
       top: 52%;
-      left: -2%;
+      left: 2%;
       rotate: -4deg;
+
+      @include up(lg) {
+        left: -2%;
+      }
     }
 
     &--soul {
       bottom: 8%;
-      right: -4%;
+      right: 2%;
       rotate: -8deg;
+
+      @include up(lg) {
+        right: -4%;
+      }
       background: var(--color-accent-pink);
       color: #fff;
     }
@@ -102,12 +116,16 @@
     transition: width 0.5s var(--ease-out-expo);
   }
 
-  &:hover {
-    transform: translateX(8px);
-    border-color: var(--accent);
+  // real hover only: on touch screens a tap leaves :hover stuck and the 8px shift
+  // pushed full-width cards past the viewport, making the page pan sideways
+  @media (hover: hover) {
+    &:hover {
+      transform: translateX(8px);
+      border-color: var(--accent);
 
-    &::before {
-      width: 12px;
+      &::before {
+        width: 12px;
+      }
     }
   }
 

@@ -25,11 +25,13 @@
         <span class="tile__hint">{{ i18n.t('contact.linkedin.hint') }}</span>
       </a>
 
-      <a class="tile tile--cv" [href]="profile().cvUrl" download>
+      <button type="button" class="tile tile--cv" aria-haspopup="dialog" (click)="cvDialog.open()">
         <span class="tile__label">{{ i18n.t('contact.cv.label') }}</span>
         <span class="tile__value">{{ i18n.t('contact.cv.value') }}</span>
-        <span class="tile__hint">PDF ↓</span>
-      </a>
+        <span class="tile__hint">{{ i18n.t('contact.cv.hint') }}</span>
+      </button>
     </div>
   </div>
 </section>
+
+<app-cv-dialog #cvDialog />

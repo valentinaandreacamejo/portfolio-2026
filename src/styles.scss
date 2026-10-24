@@ -9,14 +9,27 @@
   box-sizing: border-box;
 }
 
+// Safety net against sideways panning on phones. iOS Safari ignores
+// `overflow-x: hidden` on <body> alone, so anything wider than the screen let the
+// page wobble left/right. `clip` (unlike `hidden`) creates no scroll container,
+// so the sticky header keeps working.
+html,
+body {
+  overflow-x: clip;
+}
+
 html {
   scroll-behavior: smooth;
+
+  // no page scroll behind an open modal (e.g. the CV picker)
+  &:has(dialog[open]) {
+    overflow: hidden;
+  }
 }
 
 body {
   margin: 0;
   background: var(--color-bg);
-  overflow-x: hidden;
 }
 
 img,

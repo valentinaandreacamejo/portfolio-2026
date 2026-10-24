@@ -1,3 +1,5 @@
+import type { Language } from '../i18n/translations';
+
 export type AccentColor = 'violet' | 'pink' | 'lime' | 'sky';
 
 export interface Profile {
@@ -10,7 +12,8 @@ export interface Profile {
   available: boolean;
   email: string;
   linkedinUrl: string;
-  cvUrl: string;
+  /** CV PDF path per language (raw paths: they are URL-encoded where used). */
+  cv: Record<Language, string>;
 }
 
 export interface StoryChapter {

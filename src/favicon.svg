@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Brand mark: lime "V" + pink full stop, echoing the "VALENTINA CAMEJO." header logo -->
+  <rect width="64" height="64" rx="16" fill="#121316"/>
+  <path d="M10 16h9.5L28 38.5 36.5 16H46L33 48h-10z" fill="#CCFF00"/>
+  <circle cx="49" cy="43" r="5" fill="#EC4899"/>
+</svg>

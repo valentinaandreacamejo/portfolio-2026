@@ -35,7 +35,11 @@
   }
 
   &.is-focused {
-    transform: translateY(-6px) rotate(-1deg);
+    transform: translateY(-6px);
+    // the tilt makes full-width blocks poke past the screen edge on phones (tap = focus)
+    @media (hover: hover) {
+      transform: translateY(-6px) rotate(-1deg);
+    }
     background: var(--accent);
     color: var(--on-accent);
     box-shadow: 8px 8px 0 var(--color-dark);

@@ -4,7 +4,7 @@ import { TranslationService } from './translation.service';
 
 @Service()
 export class Profile {
-  // TODO: fill in email, LinkedIn URL and drop the CV PDF into src/assets/.
+  // TODO: fill in the LinkedIn URL.
   readonly data = signal<ProfileData>({
     name: 'Valentina Andrea Camejo',
     shortName: 'Valentina Camejo',
@@ -14,7 +14,11 @@ export class Profile {
     available: true,
     email: 'valentina_camejo@outlook.com',
     linkedinUrl: 'https://www.linkedin.com/in/valentina-andrea-camejo-4aa95a164/',
-    cvUrl: 'assets/cv.pdf',
+    cv: {
+      it: 'assets/CV design per Valentina Camejo IT.pdf',
+      es: 'assets/CV design per Valentina Camejo ES.pdf',
+      en: 'assets/CV design per Valentina Camejo.pdf',
+    },
   });
 
   private readonly i18n = inject(TranslationService);

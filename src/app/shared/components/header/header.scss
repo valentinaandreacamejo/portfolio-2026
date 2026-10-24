@@ -19,7 +19,8 @@
   &__logo {
     font-family: var(--font-headline);
     font-weight: 800;
-    font-size: clamp(1rem, 2.4vw, 1.1rem);
+    // scales down on very small phones (320px) so logo + burger fit on one line
+    font-size: clamp(0.8rem, 4vw, 1.1rem);
     letter-spacing: -0.02em;
     text-transform: uppercase;
     white-space: nowrap;
