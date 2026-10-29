@@ -168,6 +168,20 @@ const en = {
   'footer.signature': 'Designed & coded with 🖤 by {name}',
   'footer.rights': '© {year} {name}. All rights reserved.',
   'footer.top': 'Back to top ↑',
+  'footer.legal': 'Privacy & Legal',
+
+  // ---------- Legal ----------
+  'legal.title': 'Privacy & Legal Notice',
+  'legal.privacyTitle': '1. Privacy Policy',
+  'legal.privacyBody':
+    'This website is a personal portfolio. The only personal data processed is what you voluntarily send via email or contact forms for response purposes only.',
+  'legal.cookieTitle': '2. Cookie Policy',
+  'legal.cookieBody':
+    'This site does NOT use tracking or third-party profiling cookies. It only uses essential technical storage for language preferences.',
+  'legal.copyrightTitle': '3. Copyright & Intellectual Property',
+  'legal.copyrightBody':
+    'All content, source code, concepts, and showcase projects are exclusive property of Valentina Andrea Camejo (valentinacamejo.com).',
+  'legal.close': 'Close',
 };
 
 export type TranslationKey = keyof typeof en;
@@ -329,6 +343,20 @@ const it: Dictionary = {
   'footer.signature': 'Progettato e sviluppato con 🖤 da {name}',
   'footer.rights': '© {year} {name}. Tutti i diritti riservati.',
   'footer.top': 'Torna su ↑',
+  'footer.legal': 'Privacy & Note Legali',
+
+  // ---------- Legal ----------
+  'legal.title': 'Privacy & Note Legali',
+  'legal.privacyTitle': '1. Privacy Policy',
+  'legal.privacyBody':
+    'Questo sito è un portfolio personale. Gli unici dati raccolti sono quelli inviati volontariamente via email o form di contatto per sole finalità di risposta.',
+  'legal.cookieTitle': '2. Cookie Policy',
+  'legal.cookieBody':
+    'Questo sito NON utilizza cookie di profilazione o di tracciamento di terze parti. Utilizza solo una memorizzazione locale tecnica per la gestione delle preferenze di lingua.',
+  'legal.copyrightTitle': '3. Copyright & Proprietà Intellettuale',
+  'legal.copyrightBody':
+    'Tutti i contenuti, il codice sorgente, i concept e i progetti mostrati sono di proprietà esclusiva di Valentina Andrea Camejo (valentinacamejo.com).',
+  'legal.close': 'Chiudi',
 };
 
 /** Venezuelan Spanish: tú/ustedes, local vocabulary (pasantía, franela, lentes, vinotinto). */
@@ -488,6 +516,20 @@ const es: Dictionary = {
   'footer.signature': 'Diseñado y programado con 🖤 por {name}',
   'footer.rights': '© {year} {name}. Todos los derechos reservados.',
   'footer.top': 'Volver arriba ↑',
+  'footer.legal': 'Privacidad y Aviso Legal',
+
+  // ---------- Legal ----------
+  'legal.title': 'Privacidad y Aviso Legal',
+  'legal.privacyTitle': '1. Política de Privacidad',
+  'legal.privacyBody':
+    'Este sitio es un portfolio personal. Los únicos datos recopilados son los enviados voluntariamente por correo o formulario para el único propósito de responder.',
+  'legal.cookieTitle': '2. Política de Cookies',
+  'legal.cookieBody':
+    'Este sitio NO utiliza cookies de rastreo ni de terceros. Solo utiliza almacenamiento local técnico esencial para la preferencia de idioma.',
+  'legal.copyrightTitle': '3. Copyright y Propiedad Intelectual',
+  'legal.copyrightBody':
+    'Todos los contenidos, código fuente, conceptos y proyectos mostrados son propiedad exclusiva de Valentina Andrea Camejo (valentinacamejo.com).',
+  'legal.close': 'Cerrar',
 };
 
 export const TRANSLATIONS: Record<Language, Dictionary> = { it, es, en };

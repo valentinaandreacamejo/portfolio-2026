@@ -1,0 +1,114 @@
+@use 'mixins' as *;
+
+.legal {
+  width: min(100% - 32px, 600px);
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  color: var(--color-bg);
+  background: none;
+  border: 0;
+
+  &::backdrop {
+    background: color-mix(in srgb, var(--color-dark) 60%, transparent);
+    backdrop-filter: blur(6px);
+  }
+
+  &[open] {
+    animation: rise-in 0.35s var(--ease-out-expo);
+  }
+
+  &[open]::backdrop {
+    animation: fade-in 0.3s ease-out;
+  }
+
+  &__panel {
+    display: grid;
+    gap: 1.75rem;
+    max-height: inherit;
+    padding: clamp(24px, 5vw, 40px);
+    overflow: hidden auto;
+    background: var(--color-dark);
+    border: 1px solid color-mix(in srgb, var(--color-bg) 14%, transparent);
+    border-radius: var(--radius-lg);
+  }
+
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-bg) 14%, transparent);
+  }
+
+  &__title {
+    font-family: var(--font-mono);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__close {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: color-mix(in srgb, var(--color-bg) 70%, transparent);
+    white-space: nowrap;
+    transition: color 0.2s;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-accent-lime);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent-lime);
+      outline-offset: 4px;
+    }
+  }
+
+  &__section {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  &__section-title {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent-lime);
+  }
+
+  &__body {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.65;
+    opacity: 0.8;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@include reduced-motion {
+  .legal[open],
+  .legal[open]::backdrop {
+    animation: none;
+  }
+}

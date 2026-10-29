@@ -2,7 +2,14 @@
   <p class="footer__big" aria-hidden="true">Fashion × Code</p>
   <p class="footer__signature">{{ i18n.t('footer.signature', { name: profile().shortName }) }}</p>
   <div class="footer__bar">
-    <span>{{ i18n.t('footer.rights', { year, name: profile().name }) }}</span>
+    <div class="footer__meta">
+      <span>{{ i18n.t('footer.rights', { year, name: profile().name }) }}</span>
+      <button type="button" class="footer__legal" aria-haspopup="dialog" (click)="legalDialog.open()">
+        {{ i18n.t('footer.legal') }}
+      </button>
+    </div>
     <a href="#home" class="footer__top">{{ i18n.t('footer.top') }}</a>
   </div>
 </footer>
+
+<app-legal-dialog #legalDialog />

@@ -1,0 +1,17 @@
+<dialog #dialog class="legal" aria-labelledby="legal-title" (click)="onDialogClick($event)">
+  <div class="legal__panel">
+    <header class="legal__head">
+      <h2 id="legal-title" class="legal__title">{{ i18n.t('legal.title') }}</h2>
+      <button type="button" class="legal__close" (click)="close()" [attr.aria-label]="i18n.t('legal.close')">
+        <span aria-hidden="true">[ X ]</span>
+      </button>
+    </header>
+
+    @for (section of sections; track section.title) {
+      <section class="legal__section">
+        <h3 class="legal__section-title">{{ i18n.t(section.title) }}</h3>
+        <p class="legal__body">{{ i18n.t(section.body) }}</p>
+      </section>
+    }
+  </div>
+</dialog>

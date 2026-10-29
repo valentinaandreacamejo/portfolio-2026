@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { Profile } from '../../../core/services/profile';
 import { TranslationService } from '../../../core/services/translation.service';
+import { LegalDialog } from '../legal-dialog/legal-dialog';
 
 @Component({
-  imports: [],
+  imports: [LegalDialog],
   selector: 'app-footer',
   styleUrl: './footer.scss',
   templateUrl: './footer.html',

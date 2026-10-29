@@ -34,6 +34,24 @@
     border-top: 2px solid var(--color-dark);
   }
 
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+  }
+
+  &__legal {
+    font: inherit;
+    text-transform: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-accent-pink);
+    }
+  }
+
   &__top {
     font-weight: 700;
 
