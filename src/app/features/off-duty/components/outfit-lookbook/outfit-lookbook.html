@@ -1,0 +1,93 @@
+<section id="lookbook" class="section container">
+  <header class="section-head">
+    <h2 class="section-head__title lookbook__title">
+      {{ i18n.t('lookbook.title.pre') }}<em>{{ i18n.t('lookbook.title.em') }}</em
+      >{{ i18n.t('lookbook.title.post') }}
+    </h2>
+    <p class="section-head__lead">{{ i18n.t('lookbook.lead') }}</p>
+  </header>
+
+  <div class="lookbook">
+    <div class="stage" [class]="'accent-' + active().accent">
+      <figure class="stage__frame">
+        <!-- all looks are stacked and cross-faded, so switching never waits on a download -->
+        @for (outfit of outfits; track outfit.id; let i = $index) {
+          <img
+            class="stage__img"
+            [class.is-active]="i === activeIndex()"
+            [ngSrc]="outfit.image"
+            width="848"
+            height="1264"
+            [priority]="i === 0"
+            [attr.aria-hidden]="i === activeIndex() ? null : true"
+            [alt]="i18n.t('lookbook.alt', { name: profile().shortName, outfit: outfit.name })"
+          />
+        }
+        <figcaption class="stage__status" aria-live="polite">
+          <span class="stage__dot" aria-hidden="true"></span>
+          {{ i18n.t('lookbook.status') }}:
+          <!-- one-item @for keyed by outfit: a new outfit re-creates the node, so
+               animate.enter replays; the old text leaves instantly, no overlap -->
+          @for (look of [active()]; track look.id) {
+            <strong animate.enter="look-text-in">{{ look.status }}</strong>
+          }
+        </figcaption>
+      </figure>
+
+      @for (look of [active()]; track look.id) {
+        <span class="stage__counter" aria-hidden="true" animate.enter="look-counter-in"
+          >{{ look.index }} / {{ total }}</span
+        >
+        <span class="stage__name" animate.enter="look-text-in">{{ look.name }}</span>
+      }
+
+      <div class="stage__nav">
+        <button
+          type="button"
+          class="stage__arrow"
+          [attr.aria-label]="i18n.t('lookbook.prev')"
+          (click)="step(-1)"
+        >
+          ←
+        </button>
+        <button
+          type="button"
+          class="stage__arrow"
+          [attr.aria-label]="i18n.t('lookbook.next')"
+          (click)="step(1)"
+        >
+          →
+        </button>
+      </div>
+    </div>
+
+    <ol class="picker" [attr.aria-label]="i18n.t('lookbook.pick')">
+      @for (outfit of outfits; track outfit.id; let i = $index) {
+        <li>
+          <button
+            type="button"
+            class="look"
+            [class]="'accent-' + outfit.accent"
+            [class.is-active]="i === activeIndex()"
+            [attr.aria-pressed]="i === activeIndex()"
+            (click)="activeIndex.set(i)"
+          >
+            <img
+              class="look__thumb"
+              [src]="outfit.image"
+              width="848"
+              height="1264"
+              alt=""
+              loading="lazy"
+            />
+            <span class="look__index">{{ outfit.index }}</span>
+            <span class="look__text">
+              <span class="look__name">{{ outfit.name }}</span>
+              <span class="look__status">{{ outfit.status }}</span>
+            </span>
+          </button>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

@@ -1,38 +1,21 @@
 <section id="timeline" class="section container">
-  <header class="section-head" appReveal>
-    <span class="section-head__index">{{ i18n.t('timeline.index') }}</span>
+  <header class="section-head">
     <h2 class="section-head__title">{{ i18n.t('timeline.title.pre') }} <em>{{ i18n.t('timeline.title.em') }}</em>.</h2>
   </header>
 
-  <div class="tabs" role="group" [attr.aria-label]="i18n.t('timeline.filter.label')">
-    @for (filter of filters; track filter.id) {
-      <button
-        type="button"
-        class="tabs__btn"
-        [class.is-active]="active() === filter.id"
-        [attr.aria-pressed]="active() === filter.id"
-        (click)="active.set(filter.id)"
-      >
-        {{ i18n.t(filter.label) }}
-      </button>
-    }
-  </div>
-
+  <h3 class="group-title">{{ i18n.t('timeline.kind.work') }}</h3>
   <ol class="timeline">
-    @for (item of items(); track item.id) {
-      <li class="entry" [class.entry--education]="item.kind === 'education'">
+    @for (item of work(); track item.id) {
+      <li class="entry">
         <span class="entry__dot" [class.is-current]="item.current" aria-hidden="true"></span>
 
-        <div class="entry__meta">
-          <span class="entry__kind">{{ i18n.t(item.kind === 'work' ? 'timeline.kind.work' : 'timeline.kind.education') }}</span>
-          @if (item.period) {
-            <span class="entry__period">{{ item.period }}</span>
-          }
-        </div>
+        @if (item.period) {
+          <p class="entry__period">{{ item.period }}</p>
+        }
 
         <div class="entry__card">
-          <h3 class="entry__role">{{ item.role }}</h3>
-          <p class="entry__org">@ {{ item.organization }}</p>
+          <h4 class="entry__role">{{ item.role }}</h4>
+          <p class="entry__org">{{ item.organization }}</p>
           <p class="entry__desc">{{ item.description }}</p>
           <ul class="entry__tags">
             @for (tag of item.tags; track tag) {
@@ -43,4 +26,14 @@
       </li>
     }
   </ol>
+
+  <h3 class="group-title">{{ i18n.t('timeline.kind.education') }}</h3>
+  <ul class="education">
+    @for (item of education(); track item.id) {
+      <li class="education__item">
+        <span class="education__org">{{ item.organization }}</span>
+        <span class="education__role">{{ item.role }}</span>
+      </li>
+    }
+  </ul>
 </section>

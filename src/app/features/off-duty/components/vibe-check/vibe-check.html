@@ -1,0 +1,24 @@
+<section id="vibe" class="section container">
+  <header class="section-head">
+    <h2 class="section-head__title vibe__title">
+      {{ i18n.t('vibe.title.pre') }}<em>{{ i18n.t('vibe.title.em') }}</em>
+    </h2>
+    <p class="section-head__lead">{{ i18n.t('vibe.lead') }}</p>
+  </header>
+
+  <div class="vibe">
+    <app-now-playing />
+
+    <div class="obsessions">
+      <p class="obsessions__file" aria-hidden="true">~/obsessions.txt</p>
+      <ul class="obsessions__list">
+        @for (item of obsessions(); track item.emoji) {
+          <li class="obsessions__item">
+            <span class="obsessions__emoji" aria-hidden="true">{{ item.emoji }}</span>
+            {{ item.label }}
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

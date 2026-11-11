@@ -1,0 +1,36 @@
+<section id="interview" class="section container">
+  <header class="section-head">
+    <h2 class="section-head__title interview__title">
+      {{ i18n.t('interview.title.pre') }}<em>{{ i18n.t('interview.title.em') }}</em
+      >{{ i18n.t('interview.title.post') }}
+    </h2>
+    <p class="section-head__lead">{{ i18n.t('interview.lead') }}</p>
+  </header>
+
+  <ol class="interview">
+    @for (entry of entries(); track entry.id; let i = $index) {
+      <li class="qa" [class]="'accent-' + entry.accent">
+        <div class="qa__head">
+          <span class="qa__number">Q.0{{ i + 1 }}</span>
+          <span class="qa__topic">{{ entry.topic }}</span>
+        </div>
+        <p class="qa__question">
+          <span class="qa__speaker qa__speaker--ai">✦ {{ i18n.t('interview.ai') }}</span>
+          {{ entry.question }}
+        </p>
+        <blockquote class="qa__answer">
+          <span class="qa__speaker">{{ i18n.t('interview.me') }}</span>
+          <p>«{{ entry.answer }}»</p>
+        </blockquote>
+      </li>
+    }
+  </ol>
+
+  <figure class="motto">
+    <figcaption class="motto__label">Q.06 — {{ i18n.t('interview.motto') }}</figcaption>
+    <blockquote class="motto__quote">
+      <p>«{{ i18n.t('interview.q6.answer') }}»</p>
+    </blockquote>
+    <span class="motto__sign">— {{ i18n.t('interview.me') }}</span>
+  </figure>
+</section>

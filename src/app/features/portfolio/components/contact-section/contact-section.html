@@ -1,6 +1,5 @@
 <section id="contact" class="section container">
-  <div class="contact" appReveal>
-    <span class="contact__index">{{ i18n.t('contact.index') }}</span>
+  <div class="contact">
     <h2 class="contact__title">
       {{ i18n.t('contact.title.pre') }}<span class="contact__highlight">{{
         i18n.t('contact.title.highlight')
@@ -11,13 +10,27 @@
     </p>
 
     <div class="contact__actions">
-      <button type="button" class="tile tile--email" (click)="copyEmail()">
+      <div class="tile tile--email">
         <span class="tile__label">{{ i18n.t('contact.email.label') }}</span>
-        <span class="tile__value">{{ emailUser() }}&#64;<wbr />{{ emailDomain() }}</span>
-        <span class="tile__hint" aria-live="polite">
-          {{ i18n.t(copied() ? 'contact.email.copied' : 'contact.email.copy') }}
+        <!-- stretched mailto link: the whole tile opens the mail app, as people expect -->
+        <a class="tile__value tile__stretch" [href]="'mailto:' + profile().email">
+          {{ emailUser() }}&#64;<wbr />{{ emailDomain() }}
+        </a>
+        <span class="tile__foot">
+          <span class="tile__hint" aria-hidden="true">{{ i18n.t('contact.email.write') }}</span>
+          <!-- both labels share one grid cell: the button keeps the width of the longer one
+               and the swap is a cross-fade instead of a jump -->
+          <button type="button" class="tile__copy" [class.is-copied]="copied()" (click)="copyEmail()">
+            <span class="tile__copy-label" [attr.aria-hidden]="copied() || null">{{
+              i18n.t('contact.email.copy')
+            }}</span>
+            <span class="tile__copy-label tile__copy-label--done" [attr.aria-hidden]="!copied() || null">{{
+              i18n.t('contact.email.copied')
+            }}</span>
+          </button>
         </span>
-      </button>
+        <span class="sr-only" aria-live="polite">{{ copied() ? i18n.t('contact.email.copied') : '' }}</span>
+      </div>
 
       <a class="tile tile--linkedin" [href]="profile().linkedinUrl" target="_blank" rel="noopener">
         <span class="tile__label">LinkedIn</span>

@@ -1,0 +1,42 @@
+<div class="player" [class.is-playing]="playing()">
+  <div class="player__chrome" aria-hidden="true">
+    <span class="player__led"></span>
+    <span>VAC-2026 · lo-fi deck</span>
+  </div>
+
+  <div class="player__screen">
+    <span class="player__label">● {{ i18n.t('player.label') }}</span>
+    <p class="player__track">dual_soul.loop</p>
+    <p class="player__artist">V.A.C. — lo-fi / electronic · 84 BPM</p>
+
+    <div class="player__bars" aria-hidden="true">
+      @for (level of bars(); track $index) {
+        <span [style.--level]="level"></span>
+      }
+    </div>
+
+    <div class="player__progress" aria-hidden="true">
+      <span [style.--progress]="progress()"></span>
+    </div>
+    <div class="player__time">
+      <span>{{ elapsed() }} / {{ duration }}</span>
+      <span>{{ i18n.t('player.loop') }}</span>
+    </div>
+  </div>
+
+  <div class="player__controls">
+    <button
+      type="button"
+      class="player__play"
+      [disabled]="!supported"
+      [attr.aria-pressed]="playing()"
+      [attr.aria-label]="i18n.t(playing() ? 'player.pause' : 'player.play')"
+      (click)="toggle()"
+    >
+      <span aria-hidden="true">{{ playing() ? '❚❚' : '▶' }}</span>
+    </button>
+    <p class="player__note">
+      {{ i18n.t(supported ? 'player.note' : 'player.unsupported') }}
+    </p>
+  </div>
+</div>

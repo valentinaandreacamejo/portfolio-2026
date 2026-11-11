@@ -1,132 +1,84 @@
 @use 'mixins' as *;
 
 .hero {
-  position: relative;
-  overflow: hidden;
-  padding-block: clamp(48px, 8vw, 120px) clamp(64px, 10vw, 140px);
-
-  &__blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.45;
-    pointer-events: none;
-    animation: drift 18s ease-in-out infinite alternate;
-
-    &--violet {
-      top: -10%;
-      right: 10%;
-      width: 420px;
-      height: 420px;
-      background: var(--color-accent-violet);
-    }
-
-    &--pink {
-      bottom: -15%;
-      right: -5%;
-      width: 360px;
-      height: 360px;
-      background: var(--color-accent-pink);
-      animation-delay: -6s;
-    }
-
-    &--sky {
-      top: 30%;
-      left: -10%;
-      width: 300px;
-      height: 300px;
-      background: var(--color-accent-sky);
-      opacity: 0.25;
-      animation-delay: -12s;
-    }
-  }
+  padding-block: clamp(40px, 7vw, 112px) clamp(56px, 9vw, 128px);
 
   &__grid {
-    position: relative;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: clamp(48px, 6vw, 80px);
     align-items: center;
 
     @include up(lg) {
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
     }
   }
 
   &__copy {
     display: grid;
-    gap: 1.75rem;
+    // minmax(0, …): a long word can never widen the column past the screen
+    grid-template-columns: minmax(0, 1fr);
     justify-items: start;
+    gap: clamp(1.5rem, 2.4vw, 2rem);
   }
 
-  &__tag {
-    padding: 0.5rem 1rem;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    background: var(--color-card);
-    border: 1px solid var(--color-card-border);
-    border-radius: var(--radius-pill);
-  }
-
-  &__hello {
-    font-family: var(--font-headline);
-    font-size: clamp(1.1rem, 2.2vw, 1.6rem);
-    font-weight: 700;
-    text-transform: uppercase;
-
-    strong {
-      white-space: nowrap;
-      padding: 0 0.2em;
-      background: var(--color-dark);
-      color: var(--color-accent-lime);
-    }
-  }
-
-  &__wave {
-    display: inline-block;
-    transform-origin: 70% 70%;
-    animation: wave 2.4s ease-in-out infinite;
-    margin-left: 0.3em;
-  }
-
-  &__sub {
-    max-width: 44ch;
-    font-size: clamp(1.1rem, 1.9vw, 1.4rem);
-    font-weight: 700;
-    line-height: 1.4;
-  }
-
+  // ---------- Name + role: who, before anything else ----------
   &__title {
-    // sized so the longest translated word ("INCONTRA") fits the column at every width
-    font-size: clamp(2.25rem, 5.2vw, 4.5rem);
+    display: grid;
+    gap: 1rem;
+  }
+
+  &__name {
+    // "VALENTINA" is ~9.2× the font size wide in Syne 800: these steps keep it
+    // inside the column at 320px and clear of the photo on desktop
+    font-size: clamp(1.75rem, 8.6vw, 4.25rem);
+
+    @include up(lg) {
+      font-size: clamp(2.5rem, 5vw, 4.25rem);
+    }
+    line-height: 0.9;
     text-transform: uppercase;
     overflow-wrap: break-word;
-
-    em {
-      font-style: normal;
-      @include gradient-text;
-    }
   }
 
-  &__outline {
+  &__role {
+    font-family: var(--font-mono);
+    font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  // ---------- Positioning line ----------
+  &__statement {
+    max-width: 18ch;
+    font-family: var(--font-headline);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    text-wrap: balance;
+  }
+
+  &__fashion {
+    font-style: normal;
     color: transparent;
-    -webkit-text-stroke: 2px var(--color-dark);
+    -webkit-text-stroke: 1.5px var(--color-dark);
   }
 
   &__code {
     display: inline-block;
     padding: 0 0.15em;
     background: var(--color-accent-lime);
-    transform: rotate(-2deg);
+    rotate: -2deg;
   }
 
-  &__lead {
-    max-width: 48ch;
-    font-size: clamp(1rem, 1.6vw, 1.2rem);
-    color: color-mix(in srgb, var(--color-dark) 72%, transparent);
+  &__proof {
+    max-width: 36rem;
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    color: color-mix(in srgb, var(--color-dark) 78%, transparent);
   }
 
   &__ctas {
@@ -135,130 +87,183 @@
     gap: 1rem;
   }
 
-  // ---------- Avatar showcase ----------
+  // ---------- Avatar showcase: a printed photo, tilted by the pointer ----------
   &__showcase {
     --tx: 0;
     --ty: 0;
     position: relative;
-    width: min(100%, 460px);
+    width: min(100%, 440px);
     justify-self: center;
     perspective: 1000px;
   }
 
   &__card {
     margin: 0;
-    padding: 14px;
-    background: rgba(255, 255, 255, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.7);
+    padding: 12px;
+    background: var(--color-bg);
+    border: 2px solid var(--color-dark);
     border-radius: var(--radius-lg);
-    backdrop-filter: blur(20px) saturate(160%);
-    box-shadow:
-      0 30px 80px -20px rgba(139, 92, 246, 0.45),
-      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    box-shadow: 10px 10px 0 var(--color-dark);
     transform: rotateY(calc(var(--tx) * 8deg)) rotateX(calc(var(--ty) * -8deg));
     transition: transform 0.6s var(--ease-out-expo);
 
     img {
       width: 100%;
       height: auto;
-      border-radius: calc(var(--radius-lg) - 8px);
+      border-radius: calc(var(--radius-lg) - 10px);
     }
-  }
-
-  &__caption {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 6px 4px;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
-  &__caption-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--gradient-hero);
   }
 
   &__sticker {
     position: absolute;
-    padding: 0.55rem 0.9rem;
+    padding: 0.5rem 0.85rem;
     font-family: var(--font-mono);
-    font-size: clamp(0.65rem, 1.6vw, 0.8rem);
+    font-size: clamp(0.75rem, 1.4vw, 0.8rem);
     font-weight: 700;
     text-transform: uppercase;
     white-space: nowrap;
+    color: var(--color-dark);
     border: 2px solid var(--color-dark);
     border-radius: var(--radius-pill);
     box-shadow: 3px 3px 0 var(--color-dark);
     translate: calc(var(--tx) * -14px) calc(var(--ty) * -14px);
     transition: translate 0.6s var(--ease-out-expo);
-    animation: float 5s ease-in-out infinite;
+    // Accents: "stamped" onto the photo as it settles (see the timeline at the end).
+    // `scale` is its own property, so it never fights the tilt's `translate` or the
+    // resting `rotate`.
+    animation: sticker-stamp 280ms var(--ease-out-expo) both;
 
-    &--age {
-      top: 8%;
-      left: -2%;
+    // phones: stickers stay inside the photo; from lg they hang over its edge
+    &--angular {
+      top: 7%;
+      left: 4%;
       background: var(--color-accent-lime);
-      rotate: -6deg;
+      rotate: -5deg;
+      animation-delay: 300ms;
+
+      @include up(lg) {
+        left: -8%;
+      }
     }
 
     &--lang {
-      top: 42%;
-      right: -2%;
+      top: 46%;
+      right: 4%;
+      background: var(--color-accent-pink);
+      rotate: 5deg;
+      animation-delay: 340ms;
 
       @include up(lg) {
         right: -8%;
       }
-      background: var(--color-accent-pink);
-      color: #fff;
-      rotate: 5deg;
-      animation-delay: -1.6s;
     }
 
     &--ai {
-      bottom: 14%;
-      left: -2%;
+      bottom: 9%;
+      left: 4%;
+      background: var(--color-accent-sky);
+      rotate: -3deg;
+      animation-delay: 370ms;
 
       @include up(lg) {
         left: -10%;
       }
-      background: var(--color-accent-sky);
-      color: #fff;
-      rotate: -3deg;
-      animation-delay: -3.2s;
     }
   }
 }
 
-@keyframes float {
-  50% {
-    transform: translateY(-10px);
+// ---------- Entrance choreography (once per visit) ----------
+// Lead: the name. Support: statement, proof, CTAs (a wave down the reading order) and
+// the photo, which settles almost with the name. Accents: the stickers land as the photo
+// visibly settles (~90% at 300ms on this curve); at 520ms they read as a second act. Steps shrink (110 → 80 → 60ms) and so does the travel
+// (16 → 10 → 6px): a wave, not a metronome. Everything is clickable while it fades.
+//
+//   name+role   0ms   640ms  rise 16px      (lead; role rides with the name: one object)
+//   photo      60ms   700ms  scale .97 → 1  (support)
+//   statement 110ms   560ms  rise 10px
+//   proof     190ms   500ms  rise 6px
+//   CTAs      250ms   500ms  rise 6px
+//   stickers  300 / 340 / 370ms  280ms stamp (accents, synced to the photo's settle)
+.hero__title,
+.hero__statement,
+.hero__proof,
+.hero__ctas {
+  animation: hero-rise var(--dur) var(--ease-out-expo) var(--delay) both;
+}
+
+.hero__title {
+  --delay: 0ms;
+  --dur: 640ms;
+  --rise: 16px;
+}
+
+.hero__statement {
+  --delay: 110ms;
+  --dur: 560ms;
+  --rise: 10px;
+}
+
+.hero__proof {
+  --delay: 190ms;
+  --dur: 500ms;
+  --rise: 6px;
+}
+
+.hero__ctas {
+  --delay: 250ms;
+  --dur: 500ms;
+  --rise: 6px;
+}
+
+// `scale`, not `transform`: the card's transform belongs to the pointer tilt
+.hero__card {
+  animation: hero-settle 700ms var(--ease-out-expo) 60ms both;
+}
+
+// reduced motion: the choreography collapses, no delays, no movement, one short fade
+@include reduced-motion {
+  .hero__title,
+  .hero__statement,
+  .hero__proof,
+  .hero__ctas,
+  .hero__card,
+  .hero__sticker {
+    animation: hero-fade 200ms ease-out 0ms both;
+  }
+
+  // and the pointer tilt / sticker parallax stay still
+  .hero__card {
+    transform: none;
+  }
+
+  .hero__sticker {
+    translate: none;
   }
 }
 
-@keyframes wave {
-  0%,
-  60%,
-  100% {
-    transform: rotate(0);
-  }
-
-  10%,
-  30% {
-    transform: rotate(16deg);
-  }
-
-  20%,
-  40% {
-    transform: rotate(-8deg);
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    translate: 0 var(--rise);
   }
 }
 
-@keyframes drift {
-  to {
-    transform: translate(40px, 30px) scale(1.1);
+@keyframes hero-settle {
+  from {
+    opacity: 0;
+    scale: 0.97;
+  }
+}
+
+@keyframes sticker-stamp {
+  from {
+    opacity: 0;
+    scale: 1.15;
+  }
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
   }
 }

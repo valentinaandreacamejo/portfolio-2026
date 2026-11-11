@@ -2,10 +2,9 @@ import { NgOptimizedImage } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Profile } from '../../../../core/services/profile';
 import { TranslationService } from '../../../../core/services/translation.service';
-import { Reveal } from '../../../../shared/directives/reveal';
 
 @Component({
-  imports: [NgOptimizedImage, Reveal],
+  imports: [NgOptimizedImage],
   selector: 'app-about-story',
   styleUrl: './about-story.scss',
   templateUrl: './about-story.html',

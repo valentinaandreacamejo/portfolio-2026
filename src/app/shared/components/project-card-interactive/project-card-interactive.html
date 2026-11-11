@@ -1,50 +1,50 @@
-<article
-  class="card"
-  [class]="'accent-' + project().accent"
-  (pointermove)="onPointerMove($event)"
-  (pointerleave)="resetPointer()"
-  [style.--px]="pointer().x"
-  [style.--py]="pointer().y"
->
-  <div class="card__cover" aria-hidden="true">
-    <span class="card__glyph">{{ project().glyph }}</span>
-    <span class="card__number">{{ number() }}</span>
-    <div class="card__shine"></div>
+<article class="look" [class.look--featured]="featured()" [style.--look]="project().palette[0]">
+  <div class="look__frame">
+    <img
+      class="look__shot"
+      [src]="project().image"
+      width="1000"
+      height="1250"
+      loading="lazy"
+      decoding="async"
+      [alt]="i18n.t('projects.preview.alt', { title: project().title })"
+    />
   </div>
 
-  <div class="card__body">
-    <ul class="card__categories">
-      @for (label of categoryLabels(); track label) {
-        <li>{{ label }}</li>
-      }
-    </ul>
+  <div class="look__body">
+    <p class="look__meta">
+      <span>{{ i18n.t('projects.look', { n: number(), total: totalLabel() }) }}</span>
+      <span class="look__concept">{{ i18n.t('projects.concept') }}</span>
+    </p>
 
-    <h3 class="card__title">
+    <h3 class="look__title">
       @if (project().liveUrl; as url) {
-        <!-- stretched link: its ::after covers the whole card, so the card itself is clickable -->
-        <a class="card__title-link" [href]="url" target="_blank" rel="noopener noreferrer">
-          {{ project().title }}<span class="sr-only"> {{ i18n.t('projects.card.newTab') }}</span>
+        <!-- stretched link: its ::after covers the whole look, so one tab stop opens the site -->
+        <a class="look__link" [href]="url" target="_blank" rel="noopener noreferrer">
+          {{ displayTitle() }}<span class="sr-only"> {{ i18n.t('projects.card.newTab') }}</span>
         </a>
       } @else {
-        {{ project().title }}
+        {{ displayTitle() }}
       }
     </h3>
-    <p class="card__subtitle">{{ project().subtitle }}</p>
-    <p class="card__description">{{ project().description }}</p>
+    <p class="look__subtitle">{{ project().subtitle }}</p>
+    <p class="look__description">{{ project().description }}</p>
 
-    <ul class="card__tags">
+    <div class="look__palette" aria-hidden="true">
+      <span class="look__palette-label">{{ i18n.t('projects.palette') }}</span>
+      @for (color of project().palette; track color) {
+        <span class="look__swatch" [style.background]="color"></span>
+      }
+    </div>
+
+    <ul class="look__tags">
       @for (tag of project().tags; track tag) {
-        <li>#{{ tag }}</li>
+        <li class="look__tag">{{ tag }}</li>
       }
     </ul>
 
-    @if (project().liveUrl; as url) {
-      <a class="card__link" [href]="url" target="_blank" rel="noopener noreferrer">
-        {{ i18n.t('projects.card.live') }}
-        <span class="sr-only">{{ project().title }} {{ i18n.t('projects.card.newTab') }}</span>
-      </a>
-    } @else {
-      <span class="card__link card__link--muted">{{ i18n.t('projects.card.soon') }}</span>
+    @if (project().liveUrl) {
+      <span class="look__cta" aria-hidden="true">{{ i18n.t('projects.card.live') }}</span>
     }
   </div>
 </article>

@@ -1,0 +1,22 @@
+<section class="section container" aria-labelledby="off-duty-teaser-title">
+  <div class="teaser">
+    <div class="teaser__copy">
+      <h2 id="off-duty-teaser-title" class="teaser__title">{{ i18n.t('teaser.title') }}</h2>
+      <p class="teaser__lead">{{ i18n.t('teaser.lead') }}</p>
+      <a routerLink="/off-duty" class="btn btn--primary teaser__cta">{{ i18n.t('teaser.cta') }} →</a>
+    </div>
+
+    <div class="teaser__fan" aria-hidden="true">
+      @for (outfit of previews; track outfit.id) {
+        <img
+          class="teaser__look"
+          [src]="outfit.image"
+          width="848"
+          height="1264"
+          alt=""
+          loading="lazy"
+        />
+      }
+    </div>
+  </div>
+</section>

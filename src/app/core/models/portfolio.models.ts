@@ -7,7 +7,6 @@ export interface Profile {
   /** Name used for compact branding (logo, badge, signature). */
   shortName: string;
   role: string;
-  age: number;
   languages: string[];
   available: boolean;
   email: string;
@@ -26,18 +25,16 @@ export interface StoryChapter {
   accent: AccentColor;
 }
 
-export type ProjectCategory = 'web-app' | 'editorial' | 'landing' | 'interactive' | 'dashboard';
-
 export interface Project {
   id: string;
   title: string;
   subtitle: string;
   description: string;
-  categories: ProjectCategory[];
   tags: string[];
-  accent: AccentColor;
-  /** Short glyph used in the generated cover art. */
-  glyph: string;
+  /** Homepage capture of the live site (top 1800px of a 1440px viewport, scaled to 1000px). */
+  image: string;
+  /** Dominant colours sampled from the live site's computed styles. */
+  palette: string[];
   liveUrl?: string;
   repoUrl?: string;
 }
@@ -60,7 +57,27 @@ export type SkillGroupId = 'frontend' | 'design' | 'backend' | 'ai-devops';
 export interface SkillGroup {
   id: SkillGroupId;
   label: string;
-  icon: string;
-  accent: AccentColor;
   skills: string[];
+}
+
+export interface Outfit {
+  id: string;
+  index: string;
+  name: string;
+  status: string;
+  image: string;
+  accent: AccentColor;
+}
+
+export interface InterviewEntry {
+  id: string;
+  topic: string;
+  question: string;
+  answer: string;
+  accent: AccentColor;
+}
+
+export interface Obsession {
+  emoji: string;
+  label: string;
 }

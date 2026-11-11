@@ -107,8 +107,7 @@
 }
 
 @include reduced-motion {
-  .legal[open],
-  .legal[open]::backdrop {
-    animation: none;
+  .legal[open] {
+    animation: fade-in 200ms ease-out;
   }
 }

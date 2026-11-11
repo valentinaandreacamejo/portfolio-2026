@@ -1,14 +1,21 @@
 <footer class="footer container">
-  <p class="footer__big" aria-hidden="true">Fashion × Code</p>
+  <p class="footer__big" aria-hidden="true">Fashion <span class="footer__x">×</span> Code</p>
   <p class="footer__signature">{{ i18n.t('footer.signature', { name: profile().shortName }) }}</p>
   <div class="footer__bar">
     <div class="footer__meta">
       <span>{{ i18n.t('footer.rights', { year, name: profile().name }) }}</span>
-      <button type="button" class="footer__legal" aria-haspopup="dialog" (click)="legalDialog.open()">
+      <button
+        type="button"
+        class="footer__legal"
+        aria-haspopup="dialog"
+        (click)="legalDialog.open()"
+      >
         {{ i18n.t('footer.legal') }}
       </button>
     </div>
-    <a href="#home" class="footer__top">{{ i18n.t('footer.top') }}</a>
+    <button type="button" class="footer__top" (click)="scrollToTop()">
+      {{ i18n.t('footer.top') }}
+    </button>
   </div>
 </footer>
 

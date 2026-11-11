@@ -1,0 +1,34 @@
+<section class="od-hero">
+  <div class="od-hero__inner container">
+    <a routerLink="/" class="od-hero__back">{{ i18n.t('offDuty.back') }}</a>
+    <h1 class="od-hero__title">
+      <span class="od-hero__line">Dual</span>
+      <span class="od-hero__line"><span class="od-hero__outline">Soul</span>&ngsp;<em>Lab</em></span>
+    </h1>
+
+    <p class="od-hero__lead">{{ i18n.t('offDuty.lead') }}</p>
+
+    <nav class="od-hero__jump" [attr.aria-label]="i18n.t('offDuty.jump.label')">
+      @for (section of sections; track section.anchor) {
+        <a class="od-hero__chip" routerLink="/off-duty" [fragment]="section.anchor">
+          {{ i18n.t(section.label) }}
+        </a>
+      }
+    </nav>
+  </div>
+</section>
+
+<app-ticker
+  [top]="tickerTop()"
+  [bottom]="[
+    'Matcha',
+    'Dark Mode',
+    'Night coding',
+    'Vintage Vogue',
+    'Lo-fi loops',
+    'Angular Signals',
+  ]"
+/>
+<app-outfit-lookbook />
+<!-- <app-ai-interview /> -->
+<!-- <app-vibe-check /> -->

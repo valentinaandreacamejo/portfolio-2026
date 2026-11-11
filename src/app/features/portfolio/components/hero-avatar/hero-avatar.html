@@ -1,26 +1,19 @@
 <section id="home" class="hero">
-  <div class="hero__blob hero__blob--violet" aria-hidden="true"></div>
-  <div class="hero__blob hero__blob--pink" aria-hidden="true"></div>
-  <div class="hero__blob hero__blob--sky" aria-hidden="true"></div>
-
   <div class="hero__grid container">
     <div class="hero__copy">
-      <span class="hero__tag">{{ i18n.t('hero.tag') }}</span>
-
-      <p class="hero__hello">
-        {{ i18n.t('hero.hello') }} <strong>{{ profile().shortName }}</strong> <span class="hero__wave">👋</span>
-      </p>
-
       <h1 class="hero__title">
-        {{ i18n.t('hero.title.pre') }}
-        <span class="hero__outline">{{ i18n.t('hero.title.outline') }}</span>
-        {{ i18n.t('hero.title.where') }} <em>{{ i18n.t('hero.title.fashion') }}</em>
-        {{ i18n.t('hero.title.meets') }} <span class="hero__code">{{ i18n.t('hero.title.code') }}</span>
+        <span class="hero__name">{{ profile().shortName }}</span>
+        <span class="hero__role">{{ profile().role }}</span>
       </h1>
 
-      <p class="hero__sub">{{ i18n.t('hero.sub') }}</p>
+      <p class="hero__statement">
+        {{ i18n.t('hero.statement.where') }}
+        <em class="hero__fashion">{{ i18n.t('hero.statement.fashion') }}</em>
+        {{ i18n.t('hero.statement.meets') }}
+        <span class="hero__code">{{ i18n.t('hero.statement.code') }}</span>
+      </p>
 
-      <p class="hero__lead">{{ i18n.t('hero.lead') }}</p>
+      <p class="hero__proof">{{ i18n.t('hero.proof') }}</p>
 
       <div class="hero__ctas">
         <a href="#projects" class="btn btn--primary">{{ i18n.t('hero.cta.projects') }}</a>
@@ -43,13 +36,9 @@
           priority
           [alt]="i18n.t('hero.alt', { name: profile().name })"
         />
-        <figcaption class="hero__caption">
-          <span>{{ profile().role }}</span>
-          <span class="hero__caption-dot" aria-hidden="true"></span>
-        </figcaption>
       </figure>
 
-      <span class="hero__sticker hero__sticker--age">{{ i18n.t('hero.sticker.age', { age: profile().age }) }}</span>
+      <span class="hero__sticker hero__sticker--angular">{{ i18n.t('hero.sticker.angular') }}</span>
       <span class="hero__sticker hero__sticker--lang">{{
         i18n.t('hero.sticker.languages', { count: profile().languages.length })
       }}</span>

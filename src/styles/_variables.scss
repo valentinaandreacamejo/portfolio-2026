@@ -6,17 +6,19 @@
 // ---------- Colors ----------
 $color-bg: #fafafc;
 $color-dark: #121316;
-$color-accent-violet: #8b5cf6;
+// one step deeper than violet-500: passes AA (≥5.5:1) on paper and under white text
+$color-accent-violet: #7c3aed;
 $color-accent-pink: #ec4899;
 $color-accent-lime: #ccff00;
 $color-accent-sky: #06b6d4;
 $color-card: rgba(255, 255, 255, 0.9);
 $color-card-border: rgba(0, 0, 0, 0.08);
+$color-status-ok: #16a34a;
 
 // ---------- Typography ----------
-$font-headline: 'Syne', 'Space Grotesk', system-ui, sans-serif;
-$font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-$font-mono: 'Space Mono', ui-monospace, 'SFMono-Regular', monospace;
+$font-headline: 'Syne', 'Syne Fallback', system-ui, sans-serif;
+$font-body: 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', system-ui, -apple-system, sans-serif;
+$font-mono: 'Space Mono', 'Space Mono Fallback', ui-monospace, 'SFMono-Regular', monospace;
 
 // ---------- Spacing / radius / motion ----------
 $radius-sm: 8px;
@@ -44,13 +46,7 @@ $breakpoints: (
   --color-accent-sky: #{$color-accent-sky};
   --color-card: #{$color-card};
   --color-card-border: #{$color-card-border};
-
-  --gradient-hero: linear-gradient(
-    120deg,
-    var(--color-accent-violet) 0%,
-    var(--color-accent-pink) 45%,
-    var(--color-accent-sky) 100%
-  );
+  --color-status-ok: #{$color-status-ok};
 
   --font-headline: #{$font-headline};
   --font-body: #{$font-body};

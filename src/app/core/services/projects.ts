@@ -1,14 +1,6 @@
 import { Service, computed, inject } from '@angular/core';
-import { Project, ProjectCategory } from '../models/portfolio.models';
-import { TranslationKey, TranslationService } from './translation.service';
-
-export const CATEGORY_KEYS: Record<ProjectCategory, TranslationKey> = {
-  'web-app': 'category.web-app',
-  editorial: 'category.editorial',
-  landing: 'category.landing',
-  interactive: 'category.interactive',
-  dashboard: 'category.dashboard',
-};
+import { Project } from '../models/portfolio.models';
+import { TranslationService } from './translation.service';
 
 @Service()
 export class Projects {
@@ -22,10 +14,9 @@ export class Projects {
         title: 'OFFICE 99',
         subtitle: t('project.office-99.subtitle'),
         description: t('project.office-99.description'),
-        categories: ['editorial', 'web-app'],
         tags: ['Angular', 'Editorial', 'Retro UI'],
-        accent: 'violet',
-        glyph: '99',
+        image: 'assets/projects/office-99.webp',
+        palette: ['#51000e', '#bde0ff', '#f4f6f9', '#111111'],
         liveUrl: 'https://office-99.vercel.app/',
       },
       {
@@ -33,10 +24,9 @@ export class Projects {
         title: 'THE FUNKY VINO',
         subtitle: t('project.funky-vino.subtitle'),
         description: t('project.funky-vino.description'),
-        categories: ['landing'],
         tags: ['Landing Page', 'Hospitality', 'Branding'],
-        accent: 'pink',
-        glyph: '🍷',
+        image: 'assets/projects/funky-vino.webp',
+        palette: ['#8b1e1e', '#e8a598', '#f5efe6', '#2b1b17'],
         liveUrl: 'https://the-funky-vino.vercel.app/',
       },
       {
@@ -44,10 +34,9 @@ export class Projects {
         title: 'DREAMY CHAOS FESTIVAL',
         subtitle: t('project.dreamy-chaos.subtitle'),
         description: t('project.dreamy-chaos.description'),
-        categories: ['interactive', 'landing'],
         tags: ['Interactive', 'Y2K', 'Motion'],
-        accent: 'lime',
-        glyph: '✺',
+        image: 'assets/projects/dreamy-chaos.webp',
+        palette: ['#e8ff00', '#ff007a', '#7000ff', '#0e0e12'],
         liveUrl: 'https://dreamy-chaos.vercel.app/',
       },
       {
@@ -55,10 +44,9 @@ export class Projects {
         title: 'DANG! STUDIO',
         subtitle: t('project.dang-studio.subtitle'),
         description: t('project.dang-studio.description'),
-        categories: ['landing'],
         tags: ['Agency', 'Gen Z', 'Brutalism'],
-        accent: 'sky',
-        glyph: '!',
+        image: 'assets/projects/dang-studio.webp',
+        palette: ['#ff5500', '#7d8d34', '#2aa8e0', '#f5f2eb'],
         liveUrl: 'https://dang-studio.vercel.app/',
       },
       {
@@ -66,20 +54,11 @@ export class Projects {
         title: 'NEXUS_OPERATIONS',
         subtitle: t('project.nexus-operations.subtitle'),
         description: t('project.nexus-operations.description'),
-        categories: ['dashboard', 'web-app'],
         tags: ['SaaS', 'Dashboard', 'KPI'],
-        accent: 'violet',
-        glyph: '▦',
+        image: 'assets/projects/nexus-operations.webp',
+        palette: ['#d1f366', '#7c3aed', '#10b981', '#16191f'],
         liveUrl: 'https://nexus-operations-sooty.vercel.app',
       },
     ];
   });
-
-  readonly categories = computed<ProjectCategory[]>(() => [
-    ...new Set(this.all().flatMap((p) => p.categories)),
-  ]);
-
-  byCategory(category: ProjectCategory | null): Project[] {
-    return category ? this.all().filter((p) => p.categories.includes(category)) : this.all();
-  }
 }

@@ -1,8 +1,8 @@
-import { Component, computed, inject, input, signal } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { Project } from '../../../core/models/portfolio.models';
-import { CATEGORY_KEYS } from '../../../core/services/projects';
 import { TranslationService } from '../../../core/services/translation.service';
 
+/** One "look" of the projects lookbook: a live-site capture plus its credits. */
 @Component({
   imports: [],
   selector: 'app-project-card-interactive',
@@ -12,26 +12,13 @@ import { TranslationService } from '../../../core/services/translation.service';
 export class ProjectCardInteractive {
   readonly project = input.required<Project>();
   readonly index = input(0);
+  readonly total = input(1);
+  readonly featured = input(false);
 
   protected readonly i18n = inject(TranslationService);
 
   protected readonly number = computed(() => String(this.index() + 1).padStart(2, '0'));
-  protected readonly categoryLabels = computed(() =>
-    this.project().categories.map((c) => this.i18n.t(CATEGORY_KEYS[c])),
-  );
-
-  /** Pointer position over the card, normalised to [0, 1]. */
-  protected readonly pointer = signal({ x: 0.5, y: 0.5 });
-
-  protected onPointerMove(event: PointerEvent): void {
-    const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
-    this.pointer.set({
-      x: (event.clientX - rect.left) / rect.width,
-      y: (event.clientY - rect.top) / rect.height,
-    });
-  }
-
-  protected resetPointer(): void {
-    this.pointer.set({ x: 0.5, y: 0.5 });
-  }
+  protected readonly totalLabel = computed(() => String(this.total()).padStart(2, '0'));
+  /** Lets "NEXUS_OPERATIONS" wrap after the underscore instead of mid-word. */
+  protected readonly displayTitle = computed(() => this.project().title.replaceAll('_', '_\u200B'));
 }

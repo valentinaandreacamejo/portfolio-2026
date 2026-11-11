@@ -12,29 +12,21 @@ export class Skills {
       {
         id: 'frontend',
         label: t('skills.group.frontend'),
-        icon: '</>',
-        accent: 'pink',
         skills: ['Angular', 'TypeScript', 'HTML5', 'CSS3 / SCSS', 'Bootstrap'],
       },
       {
         id: 'design',
         label: t('skills.group.design'),
-        icon: '◐',
-        accent: 'violet',
         skills: ['Figma', t('skill.colorTheory'), t('skill.trendAnalysis'), 'Wireframing'],
       },
       {
         id: 'backend',
         label: t('skills.group.backend'),
-        icon: '{ }',
-        accent: 'sky',
         skills: ['Java', 'SQL'],
       },
       {
         id: 'ai-devops',
         label: t('skills.group.ai-devops'),
-        icon: '✦',
-        accent: 'lime',
         skills: ['Claude Code', 'Gemini', 'Docker', 'AWS'],
       },
     ];

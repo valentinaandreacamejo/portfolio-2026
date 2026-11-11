@@ -4,6 +4,7 @@ import { AboutStory } from './components/about-story/about-story';
 import { ContactSection } from './components/contact-section/contact-section';
 import { ExperienceTimeline } from './components/experience-timeline/experience-timeline';
 import { HeroAvatar } from './components/hero-avatar/hero-avatar';
+import { OffDutyTeaser } from './components/off-duty-teaser/off-duty-teaser';
 import { ProjectsDirectory } from './components/projects-directory/projects-directory';
 import { TechAiStack } from './components/tech-ai-stack/tech-ai-stack';
 
@@ -16,6 +17,7 @@ import { TechAiStack } from './components/tech-ai-stack/tech-ai-stack';
     ExperienceTimeline,
     TechAiStack,
     ContactSection,
+    OffDutyTeaser,
   ],
   selector: 'app-portfolio-page',
   styleUrl: './portfolio-page.scss',

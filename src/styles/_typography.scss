@@ -1,5 +1,39 @@
 // Fonts are loaded from Google Fonts in src/index.html.
 
+// Metric-matched fallbacks: until the web fonts arrive, local fonts are stretched to the
+// same advance width and vertical metrics, so lines break in the same places and the
+// swap doesn't shift the layout. Values measured in Chrome against the real faces
+// (canvas measureText, 100px). The weight range stops the browser from faking bold.
+@font-face {
+  font-family: 'Syne Fallback';
+  src: local('Arial Bold'), local('Arial-BoldMT'), local('Arial');
+  font-weight: 100 900;
+  size-adjust: 167.9%;
+  ascent-override: 55.4%;
+  descent-override: 16.1%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans Fallback';
+  src: local('Arial'), local('ArialMT');
+  font-weight: 100 900;
+  size-adjust: 104%;
+  ascent-override: 100%;
+  descent-override: 21.2%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Space Mono Fallback';
+  src: local('Courier New'), local('CourierNewPSMT');
+  font-weight: 100 900;
+  size-adjust: 102%;
+  ascent-override: 109.8%;
+  descent-override: 35.3%;
+  line-gap-override: 0%;
+}
+
 body {
   font-family: var(--font-body);
   font-size: 1rem;
@@ -19,6 +53,7 @@ h4,
   line-height: 0.95;
   letter-spacing: -0.03em;
   margin: 0;
+  text-wrap: balance;
 }
 
 h1,
@@ -36,6 +71,7 @@ h3 {
 
 p {
   margin: 0;
+  text-wrap: pretty;
 }
 
 code,

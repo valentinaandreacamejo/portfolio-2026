@@ -1,5 +1,10 @@
 <header class="header container">
-  <a href="#home" class="header__logo" [attr.aria-label]="i18n.t('nav.home', { name: profile().name })">
+  <a
+    routerLink="/"
+    fragment="home"
+    class="header__logo"
+    [attr.aria-label]="i18n.t('nav.home', { name: profile().name })"
+  >
     {{ profile().shortName }}<span class="header__slash">.</span>
   </a>
 
@@ -10,12 +15,27 @@
     </span>
   }
 
-  <nav id="main-nav" class="header__nav" [class.is-open]="menuOpen()" [attr.aria-label]="i18n.t('nav.label')">
+  <nav
+    id="main-nav"
+    class="header__nav"
+    [class.is-open]="menuOpen()"
+    [attr.aria-label]="i18n.t('nav.label')"
+  >
+    <!-- router links (not bare #hashes) so the anchors also work from /off-duty -->
     @for (link of links; track link.anchor) {
-      <a class="header__link" [href]="'#' + link.anchor" (click)="menuOpen.set(false)">
-        [{{ i18n.t(link.label) }}]
+      <a class="header__link" routerLink="/" [fragment]="link.anchor" (click)="menuOpen.set(false)">
+        {{ i18n.t(link.label) }}
       </a>
     }
+    <a
+      class="header__link header__link--off-duty"
+      routerLink="/off-duty"
+      routerLinkActive="is-active"
+      ariaCurrentWhenActive="page"
+      (click)="menuOpen.set(false)"
+    >
+      Off-Duty
+    </a>
     <!-- phones: the bar has no room, so the switcher lives at the bottom of the menu -->
     <ng-container [ngTemplateOutlet]="langSwitch" [ngTemplateOutletContext]="{ place: 'menu' }" />
   </nav>
@@ -23,7 +43,12 @@
   <ng-container [ngTemplateOutlet]="langSwitch" [ngTemplateOutletContext]="{ place: 'bar' }" />
 
   <ng-template #langSwitch let-place="place">
-    <div class="lang" [class]="'lang--' + place" role="group" [attr.aria-label]="i18n.t('lang.label')">
+    <div
+      class="lang"
+      [class]="'lang--' + place"
+      role="group"
+      [attr.aria-label]="i18n.t('lang.label')"
+    >
       @for (language of i18n.languages; track language.code) {
         <button
           type="button"
@@ -35,7 +60,7 @@
           [title]="language.name"
           (click)="i18n.setLanguage(language.code)"
         >
-          [{{ language.label }}]
+          {{ language.label }}
         </button>
       }
     </div>

@@ -16,7 +16,8 @@
   }
 
   &[open] {
-    animation: pop-in 0.45s var(--ease-spring);
+    // modal: no overshoot, centred, quick
+    animation: pop-in 280ms var(--ease-out-expo);
   }
 
   &[open]::backdrop {
@@ -36,26 +37,6 @@
     border-radius: var(--radius-lg);
     box-shadow: 8px 8px 0 var(--color-accent-violet);
 
-    // same gradient glow as the contact box
-    &::after {
-      content: '';
-      position: absolute;
-      top: -45%;
-      right: -35%;
-      width: 360px;
-      height: 360px;
-      border-radius: 50%;
-      background: var(--gradient-hero);
-      filter: blur(80px);
-      opacity: 0.45;
-      pointer-events: none;
-    }
-
-    // lift content above the glow; the close button keeps its absolute position
-    > :not(.cv__close) {
-      position: relative;
-      z-index: 1;
-    }
   }
 
   &__close {
@@ -73,15 +54,13 @@
     border-radius: 50%;
     transition:
       background-color 0.2s,
-      color 0.2s,
-      transform 0.3s var(--ease-spring);
+      color 0.2s;
 
     &:hover,
     &:focus-visible {
       color: var(--color-dark);
       background: var(--color-accent-lime);
       border-color: var(--color-accent-lime);
-      transform: rotate(90deg);
     }
   }
 
@@ -126,10 +105,17 @@
     transform 0.4s var(--ease-spring),
     box-shadow 0.4s var(--ease-out-expo);
 
-  &:hover,
   &:focus-visible {
     transform: translate(-3px, -3px) rotate(-1deg);
     box-shadow: 5px 5px 0 var(--color-bg);
+  }
+
+  // lift only with a real pointer: on touch a tap leaves :hover stuck
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: translate(-3px, -3px) rotate(-1deg);
+      box-shadow: 5px 5px 0 var(--color-bg);
+    }
   }
 
   &:focus-visible {
@@ -157,7 +143,7 @@
   &__badge {
     padding: 0.2em 0.6em;
     font-family: var(--font-mono);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--color-bg);
@@ -180,7 +166,7 @@
 @keyframes pop-in {
   from {
     opacity: 0;
-    transform: translateY(24px) scale(0.96);
+    transform: translateY(12px) scale(0.98);
   }
 }
 
@@ -190,9 +176,14 @@
   }
 }
 
+// reduced motion: the dialog still fades in, it just doesn't travel
 @include reduced-motion {
-  .cv[open],
-  .cv[open]::backdrop {
-    animation: none;
+  .cv[open] {
+    animation: fade-in 200ms ease-out;
+  }
+
+  .option,
+  .option__arrow {
+    transition: box-shadow 0.2s ease;
   }
 }

@@ -1,13 +1,9 @@
-import { Component, computed, inject, signal } from '@angular/core';
-import { ExperienceKind } from '../../../../core/models/portfolio.models';
+import { Component, computed, inject } from '@angular/core';
 import { Profile } from '../../../../core/services/profile';
-import { TranslationKey, TranslationService } from '../../../../core/services/translation.service';
-import { Reveal } from '../../../../shared/directives/reveal';
-
-type TimelineFilter = ExperienceKind | 'all';
+import { TranslationService } from '../../../../core/services/translation.service';
 
 @Component({
-  imports: [Reveal],
+  imports: [],
   selector: 'app-experience-timeline',
   styleUrl: './experience-timeline.scss',
   templateUrl: './experience-timeline.html',
@@ -17,16 +13,9 @@ export class ExperienceTimeline {
 
   protected readonly i18n = inject(TranslationService);
 
-  protected readonly filters: { id: TimelineFilter; label: TranslationKey }[] = [
-    { id: 'all', label: 'timeline.filter.all' },
-    { id: 'work', label: 'timeline.kind.work' },
-    { id: 'education', label: 'timeline.kind.education' },
-  ];
-  protected readonly active = signal<TimelineFilter>('all');
-  protected readonly items = computed(() => {
-    const filter = this.active();
-    return filter === 'all'
-      ? this.experience()
-      : this.experience().filter((item) => item.kind === filter);
-  });
+  /** Work carries dates and detail; education is a compact, undated list. */
+  protected readonly work = computed(() => this.experience().filter((item) => item.kind === 'work'));
+  protected readonly education = computed(() =>
+    this.experience().filter((item) => item.kind === 'education'),
+  );
 }

@@ -1,0 +1,191 @@
+@use 'mixins' as *;
+
+:host {
+  display: block;
+}
+
+// Y2K hardware: brushed-chrome shell, glowing LCD, candy play button.
+.player {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(16px, 3vw, 24px);
+  border: 2px solid var(--color-dark);
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.9), transparent 45%),
+    linear-gradient(160deg, #f4f4f8 0%, #c9cad3 38%, #eef0f5 60%, #a9abb6 100%);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.12),
+    8px 8px 0 var(--color-accent-violet);
+
+  &__chrome {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding-inline: 0.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--color-dark) 55%, transparent);
+  }
+
+  &__led {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #6b7280;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+    transition:
+      background-color 0.3s,
+      box-shadow 0.3s;
+  }
+
+  &.is-playing &__led {
+    background: var(--color-accent-pink);
+    box-shadow: 0 0 10px var(--color-accent-pink);
+  }
+
+  &__screen {
+    display: grid;
+    gap: 0.35rem;
+    padding: 1.1rem 1.2rem 1rem;
+    overflow: hidden;
+    font-family: var(--font-mono);
+    color: var(--color-accent-lime);
+    border: 2px solid var(--color-dark);
+    border-radius: var(--radius-md);
+    background:
+      repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 3px),
+      linear-gradient(180deg, #1c1d26 0%, #0d0e12 100%);
+    box-shadow: inset 0 0 24px rgba(204, 255, 0, 0.12);
+    text-shadow: 0 0 8px color-mix(in srgb, var(--color-accent-lime) 60%, transparent);
+  }
+
+  &__label {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  &.is-playing &__label {
+    animation: blink 1.2s steps(2, start) infinite;
+  }
+
+  &__track {
+    font-size: clamp(1.1rem, 3vw, 1.35rem);
+    font-weight: 700;
+    overflow-wrap: anywhere;
+  }
+
+  &__artist {
+    font-size: 0.72rem;
+    color: color-mix(in srgb, var(--color-bg) 70%, transparent);
+    text-shadow: none;
+  }
+
+  &__bars {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    align-items: end;
+    gap: 4px;
+    height: 56px;
+    margin-block: 0.6rem 0.4rem;
+
+    span {
+      height: calc(8% + var(--level, 0) * 92%);
+      border-radius: 2px 2px 0 0;
+      background: linear-gradient(
+        0deg,
+        var(--color-accent-lime),
+        var(--color-accent-sky) 70%,
+        var(--color-accent-pink)
+      );
+      opacity: 0.9;
+    }
+  }
+
+  &__progress {
+    height: 4px;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.12);
+
+    span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--color-accent-lime);
+      transform: scaleX(var(--progress, 0));
+      transform-origin: left;
+    }
+  }
+
+  &__time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__play {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    font-size: 1.2rem;
+    letter-spacing: -0.1em;
+    color: #fff;
+    border: 2px solid var(--color-dark);
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.7), transparent 40%),
+      var(--color-accent-pink);
+    box-shadow:
+      inset 0 -4px 0 rgba(0, 0, 0, 0.18),
+      3px 3px 0 var(--color-dark);
+    transition: transform 0.3s var(--ease-spring);
+
+    &:hover:not(:disabled) {
+      transform: scale(1.06) rotate(-4deg);
+    }
+
+    &:active:not(:disabled) {
+      transform: scale(0.95);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--color-accent-violet);
+      outline-offset: 3px;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      filter: grayscale(1);
+      opacity: 0.6;
+    }
+  }
+
+  &__note {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    line-height: 1.5;
+    color: color-mix(in srgb, var(--color-dark) 70%, transparent);
+  }
+}
+
+@keyframes blink {
+  to {
+    opacity: 0.35;
+  }
+}

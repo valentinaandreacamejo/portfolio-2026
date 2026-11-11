@@ -1,0 +1,74 @@
+@use 'mixins' as *;
+
+// Sits right before the dark contact slab: lime keeps the two blocks distinct.
+.teaser {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 48px);
+  padding: clamp(24px, 6vw, 72px);
+  overflow: hidden;
+  border: 2px solid var(--color-dark);
+  border-radius: var(--radius-lg);
+  background:
+    repeating-linear-gradient(-45deg, transparent 0 18px, rgba(0, 0, 0, 0.04) 18px 36px),
+    var(--color-accent-lime);
+  box-shadow: 10px 10px 0 var(--color-dark);
+
+  @include up(lg) {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    align-items: center;
+  }
+
+  &__copy {
+    display: grid;
+    justify-items: start;
+    gap: 1.25rem;
+  }
+
+  &__title {
+    font-size: clamp(2rem, 6.5vw, 5.5rem);
+    line-height: 0.92;
+    overflow-wrap: break-word;
+  }
+
+  &__lead {
+    max-width: 44ch;
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+  }
+
+  &__cta {
+    margin-top: 0.5rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  &__fan {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-block: 1rem;
+  }
+
+  &__look {
+    width: clamp(110px, 26vw, 170px);
+    height: auto;
+    border: 2px solid var(--color-dark);
+    border-radius: 120px 120px var(--radius-md) var(--radius-md);
+    background: var(--color-bg);
+    box-shadow: 6px 6px 0 var(--color-dark);
+
+    &:nth-child(1) {
+      transform: rotate(-8deg) translateY(12px);
+    }
+
+    &:nth-child(2) {
+      z-index: 1;
+      margin-inline: -28px;
+    }
+
+    &:nth-child(3) {
+      transform: rotate(8deg) translateY(12px);
+    }
+  }
+}

@@ -10,7 +10,10 @@
     line-height: 0.9;
     letter-spacing: -0.04em;
     text-transform: uppercase;
-    @include gradient-text;
+  }
+
+  &__x {
+    color: var(--color-accent-pink);
   }
 
   &__signature {
@@ -40,6 +43,13 @@
     gap: 0.5rem 1.5rem;
   }
 
+  &__legal,
+  &__top {
+    // 44px touch target; the negative margin keeps the bar's rhythm unchanged
+    min-height: 44px;
+    margin-block: -0.75rem;
+  }
+
   &__legal {
     font: inherit;
     text-transform: inherit;
@@ -53,7 +63,9 @@
   }
 
   &__top {
+    font: inherit;
     font-weight: 700;
+    text-transform: inherit;
 
     &:hover {
       color: var(--color-accent-pink);

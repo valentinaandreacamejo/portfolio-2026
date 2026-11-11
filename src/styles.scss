@@ -71,15 +71,10 @@ section[id] {
   scroll-margin-top: 72px;
 }
 
+// Reduced motion is handled per component (fades stay, movement goes), not with a global
+// 0.01ms kill that would also erase the fades that explain state changes.
 @include reduced-motion {
   html {
     scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
   }
 }

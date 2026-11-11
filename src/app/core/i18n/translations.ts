@@ -19,45 +19,34 @@ const en = {
   'lang.label': 'Language',
 
   // ---------- Hero ----------
-  'hero.tag': 'Front-end Developer & UI/UX Design Enthusiast',
-  'hero.hello': "Hi, I'm",
-  'hero.title.pre': 'The',
-  'hero.title.outline': 'Dual Soul:',
-  'hero.title.where': 'where',
-  'hero.title.fashion': 'fashion',
-  'hero.title.meets': 'meets',
-  'hero.title.code': 'code.',
-  'hero.sub':
-    'Front-end Developer & UX Engineer blending Italian & Venezuelan roots with a fashion-forward design eye.',
-  'hero.lead':
-    'Shaping digital experiences with a sharp design eye and rock-solid engineering. From Venezuela to Italy & Dublin, building the web of 2026.',
-  'hero.cta.projects': 'Explore projects',
+  'hero.statement.where': 'Where',
+  'hero.statement.fashion': 'fashion',
+  'hero.statement.meets': 'meets',
+  'hero.statement.code': 'code.',
+  'hero.proof':
+    'Four years building production Angular front-ends at KEDOS srl, with a fashion design training from Bologna and Condé Nast College Madrid.',
+  'hero.cta.projects': 'See the work',
   'hero.cta.contact': 'Get in touch',
-  'hero.sticker.age': '[{age} years old]',
+  'hero.sticker.angular': '[Angular · 4 yrs in prod]',
   'hero.sticker.languages': '[{count} languages]',
-  'hero.sticker.ai': '[AI-powered dev]',
+  'hero.sticker.ai': '[AI-assisted workflow]',
   'hero.alt':
     '{name} — 3D avatar portrait with long wavy hair, black glasses and a burgundy leather bomber jacket',
 
   // ---------- Projects ----------
-  'projects.index': '(01) — Projects Directory',
-  'projects.title.pre': 'Selected ',
-  'projects.title.em': 'work',
-  'projects.title.post': ', loud by design.',
+  'projects.title.pre': 'Five concepts, five ',
+  'projects.title.em': 'worlds',
+  'projects.title.post': '.',
   'projects.lead':
-    'Five projects, five personalities: from high-fashion editorial to industrial SaaS dashboards. Filter by category and hover the cards to play.',
-  'projects.filter.label': 'Filter projects by category',
-  'projects.filter.all': 'All',
-  'projects.comingSoon': '[Next project coming soon...]',
-  'projects.comingSoon.cta': 'Could it be yours? →',
+    'Self-initiated projects: the brands are invented, the code is real and live on Vercel. Each one has its own art direction, from a late-90s editorial to an industrial SaaS dashboard.',
+  'projects.concept': 'Self-initiated concept',
+  'projects.look': 'Look {n} / {total}',
+  'projects.palette': 'Palette',
+  'projects.preview.alt': '{title}: homepage screenshot',
+  'projects.outro': 'Have a brand that needs a world of its own?',
+  'projects.outro.cta': "Let's talk →",
   'projects.card.live': 'Visit site ↗',
   'projects.card.newTab': '(opens in a new tab)',
-  'projects.card.soon': 'Case study soon',
-  'category.web-app': 'Web App',
-  'category.editorial': 'Editorial',
-  'category.landing': 'Landing Page',
-  'category.interactive': 'Interactive',
-  'category.dashboard': 'Dashboard',
   'project.office-99.subtitle': 'Retro-Editorial Agency Showcase',
   'project.office-99.description':
     'A late-90s office aesthetic remixed into a high-fashion editorial experience.',
@@ -75,39 +64,35 @@ const en = {
     'An industrial ERP and KPI SaaS dashboard focused on dense, readable data.',
 
   // ---------- About / Story ----------
-  'about.index': '(02) — About & Story',
   'about.title': 'The story of',
   'about.lead':
-    "Half fashion lover, half software engineer: two souls, one craft. Here's how {name} went from Venezuela to writing Angular in Italy with a stylist's eye.",
+    "Half fashion lover, half software engineer: two souls, one craft. This is how I went from Venezuela to writing Angular in Italy with a stylist's eye.",
   'about.alt':
     '{name} — full-body 3D avatar in a burgundy leather bomber, white tee, blue jeans and white sneakers',
   'story.origins.kicker': 'The Origins',
   'story.origins.title': 'Born in Venezuela, raised between three languages.',
   'story.origins.body':
-    'Valentina Andrea Camejo grew up in Venezuela, moved to Italy in 2017 and spent a year in Dublin. Switching countries taught her to adapt fast, listen carefully and communicate with people from every background — in Italian, Spanish and English.',
+    'I grew up in Venezuela, moved to Italy on my own in 2017 and spent a year in Dublin. Changing countries taught me to adapt fast, listen carefully and communicate with people from every background, in Italian, Spanish and English.',
   'story.origins.italy': 'Italy · 2017',
   'story.origins.dublin': 'Dublin',
   'story.design.kicker': 'The Design Eye',
   'story.design.title': 'Trained in fashion, fluent in visual language.',
   'story.design.body':
-    'Before writing a single line of code, Valentina Camejo studied Fashion Design in Bologna and Personal Styling/Shopping at Condé Nast College in Madrid. Composition, colour theory and trend analysis sharpened an aesthetic sensibility she now translates into high-end UI/UX.',
+    'Before writing a single line of code, I studied Fashion Design in Bologna and Personal Styling/Shopping at Condé Nast College in Madrid. Composition, colour theory and trend analysis sharpened the eye I now bring to UI/UX.',
   'story.design.bologna': 'Bologna',
   'story.engineering.kicker': 'Engineering & Full-Stack',
   'story.engineering.title': 'From sketchbook to production code.',
   'story.engineering.body':
-    'A post-diploma IFTS specialisation in Software Development at Cisita Parma turned Valentina Andrea Camejo into an engineer, followed by 4 years in the field at KEDOS srl building Angular front-ends backed by Java, SQL, AWS and Docker.',
+    'A post-diploma IFTS specialisation in Software Development at Cisita Parma turned me into an engineer, followed by 4 years at KEDOS srl building Angular front-ends backed by Java, SQL, AWS and Docker.',
   'story.ai.kicker': 'AI Workflow',
   'story.ai.title': 'Human taste, machine speed.',
   'story.ai.body':
-    "AI tools like Claude Code and Gemini are built into Valentina Camejo's workflow: faster prototyping, sharper refactors and more time spent on the details that make an interface feel right.",
+    'Claude Code and Gemini are part of how I work: faster prototypes, sharper refactors and more time for the details that make an interface feel right.',
   'story.ai.assisted': 'AI-assisted dev',
 
   // ---------- Timeline ----------
-  'timeline.index': '(03) — Timeline',
   'timeline.title.pre': 'Experience &',
   'timeline.title.em': 'education',
-  'timeline.filter.label': 'Filter timeline',
-  'timeline.filter.all': 'All',
   'timeline.kind.work': 'Work',
   'timeline.kind.education': 'Education',
   'timeline.present': 'Present',
@@ -132,11 +117,10 @@ const en = {
   'exp.pio-xii.description': 'Scientific high school studies.',
 
   // ---------- Skills ----------
-  'skills.index': '(04) — Skills & AI',
   'skills.title.pre': 'The ',
   'skills.title.em': 'tech & AI',
   'skills.title.post': ' stack.',
-  'skills.lead': '{count} tools across design, engineering and AI. Hover a block to spotlight it.',
+  'skills.lead': 'What I use day to day, from the first Figma frame to the deploy.',
   'skills.group.frontend': 'Frontend',
   'skills.group.design': 'UI/UX & Design',
   'skills.group.backend': 'Backend & Data',
@@ -145,13 +129,13 @@ const en = {
   'skill.trendAnalysis': 'Trend Analysis',
 
   // ---------- Contact ----------
-  'contact.index': '(05) — Contact',
   'contact.title.pre': "Let's build something ",
   'contact.title.highlight': 'bold.',
   'contact.lead':
-    'Open to front-end, UX engineering and creative web projects. Drop me a line. I reply fast.',
+    'Open to front-end and UX engineering roles, and to freelance web projects. Drop me a line, I reply fast.',
   'contact.email.label': 'Email',
-  'contact.email.copy': 'Click to copy',
+  'contact.email.write': 'Write to me →',
+  'contact.email.copy': 'Copy address',
   'contact.email.copied': 'Copied! ✓',
   'contact.linkedin.value': "Let's connect",
   'contact.linkedin.hint': 'Open profile ↗',
@@ -165,10 +149,78 @@ const en = {
   'cv.close': 'Close',
 
   // ---------- Footer ----------
-  'footer.signature': 'Designed & coded with 🖤 by {name}',
+  'footer.signature': 'Designed & coded by {name}',
   'footer.rights': '© {year} {name}. All rights reserved.',
   'footer.top': 'Back to top ↑',
   'footer.legal': 'Privacy & Legal',
+
+  // ---------- Off-Duty teaser (landing) ----------
+  'teaser.title': 'Beyond the code.',
+  'teaser.lead':
+    "Outfits, a lo-fi loop and a two-voice interview: the side of me that doesn't fit in a CV.",
+  'teaser.cta': 'Explore the Dual Soul Lab',
+
+  // ---------- Ticker ----------
+  'ticker.dualSoul': 'Fashion meets code',
+  'ticker.angular': 'Angular & AI-assisted dev',
+  'ticker.route': 'Venezuela → Ireland → Italy',
+
+  // ---------- Off-Duty page ----------
+  'offDuty.back': '← Back to portfolio',
+  'offDuty.lead':
+    'What I wear while I code, what plays in my headphones and an interview with the AI I build with every day.',
+  'offDuty.jump.label': 'Page sections',
+  'offDuty.jump.lookbook': 'Lookbook',
+  'offDuty.jump.interview': 'Interview',
+  'offDuty.jump.vibe': 'Vibe',
+
+  'lookbook.title.pre': 'Seven outfits, ',
+  'lookbook.title.em': 'one',
+  'lookbook.title.post': ' mindset.',
+  'lookbook.lead': "Every look comes with its own mode. Pick an outfit and see what I'm up to.",
+  'lookbook.status': 'Status',
+  'lookbook.pick': 'Choose an outfit',
+  'lookbook.prev': 'Previous outfit',
+  'lookbook.next': 'Next outfit',
+  'lookbook.alt': '{name} — 3D avatar wearing {outfit}',
+
+  'interview.title.pre': 'The ',
+  'interview.title.em': 'double',
+  'interview.title.post': ' interview.',
+  'interview.lead': 'The AI asks, Valentina answers. No filters, no retakes.',
+  'interview.ai': 'AI asks',
+  'interview.me': 'Valentina',
+  'interview.motto': 'Life motto',
+  'interview.q1.question':
+    'That lightbulb moment: when did you realise fashion and code could coexist?',
+  'interview.q1.answer':
+    "When I was studying programming, I felt my creativity was going to take a back seat... but once I started working I realised it's not just about writing code, it's about understanding the user and the experience. Studying fashion made that side of me impossible to switch off.",
+  'interview.q2.question': 'Your biggest visual red flag?',
+  'interview.q2.answer':
+    "Outdated or sloppy aesthetics. It's 2026: let's use the tools to push creativity to the max!",
+  'interview.q3.question': 'Your superpower on a project?',
+  'interview.q3.answer':
+    "I'm a born problem solver. I was born in Venezuela and at 17 I moved to another country on my own, with nothing: I had to learn to figure things out, no matter what. With calm and patience, everything works out.",
+  'interview.q4.question': 'Your ideal desk setup?',
+  'interview.q4.answer':
+    "Super clean and organised. Water, phone, headphones, the task at hand and that's it. Zero distractions.",
+  'interview.q5.question': 'Your perfect trio?',
+  'interview.q5.answer': 'Coffee, Dark Mode and working at night.',
+  'interview.q6.answer':
+    "Live in the present, love what you do and be proud of how far you've come.",
+
+  'vibe.title.pre': 'Current ',
+  'vibe.title.em': 'obsessions.',
+  'vibe.lead': 'The soundtrack and the little things fuelling this season.',
+  'player.label': 'Now playing',
+  'player.play': 'Play the loop',
+  'player.pause': 'Pause the loop',
+  'player.loop': '∞ loop',
+  'player.note': 'Generated live in your browser with the Web Audio API. Loops forever.',
+  'player.unsupported': 'Your browser does not support the Web Audio API.',
+  'obsession.coffee': 'Matcha Latte & Espresso',
+  'obsession.cats': 'AI Cat Videos',
+  'obsession.vogue': 'Vintage Vogue Archives',
 
   // ---------- Legal ----------
   'legal.title': 'Privacy & Legal Notice',
@@ -199,44 +251,33 @@ const it: Dictionary = {
   'header.available': 'Disponibile',
   'lang.label': 'Lingua',
 
-  'hero.tag': 'Front-end Developer & appassionata di UI/UX Design',
-  'hero.hello': 'Ciao, sono',
-  'hero.title.pre': 'La',
-  'hero.title.outline': 'Doppia Anima:',
-  'hero.title.where': 'dove la',
-  'hero.title.fashion': 'moda',
-  'hero.title.meets': 'incontra il',
-  'hero.title.code': 'codice.',
-  'hero.sub':
-    "Front-end Developer & UX Engineer che unisce radici italiane e venezuelane a un occhio per il design ispirato alla moda.",
-  'hero.lead':
-    "Creo esperienze digitali con un occhio attento al design e un'ingegneria solida. Dal Venezuela all'Italia e a Dublino, costruisco il web del 2026.",
-  'hero.cta.projects': 'Scopri i progetti',
+  'hero.statement.where': 'Dove la',
+  'hero.statement.fashion': 'moda',
+  'hero.statement.meets': 'incontra il',
+  'hero.statement.code': 'codice.',
+  'hero.proof':
+    'Da quattro anni costruisco front-end Angular in produzione in KEDOS srl, con una formazione in fashion design tra Bologna e il Condé Nast College di Madrid.',
+  'hero.cta.projects': 'Guarda i lavori',
   'hero.cta.contact': 'Contattami',
-  'hero.sticker.age': '[{age} anni]',
+  'hero.sticker.angular': '[Angular · 4 anni in prod]',
   'hero.sticker.languages': '[{count} lingue]',
-  'hero.sticker.ai': '[Dev con AI]',
+  'hero.sticker.ai': '[Workflow con AI]',
   'hero.alt':
     '{name} — avatar 3D con lunghi capelli mossi, occhiali neri e bomber in pelle bordeaux',
 
-  'projects.index': '(01) — Progetti',
-  'projects.title.pre': 'Lavori ',
-  'projects.title.em': 'selezionati',
-  'projects.title.post': ', audaci per natura.',
+  'projects.title.pre': 'Cinque concept, cinque ',
+  'projects.title.em': 'mondi',
+  'projects.title.post': '.',
   'projects.lead':
-    "Cinque progetti, cinque personalità: dall'editoriale high-fashion alle dashboard SaaS industriali. Filtra per categoria e passa sopra le card per giocare.",
-  'projects.filter.label': 'Filtra i progetti per categoria',
-  'projects.filter.all': 'Tutti',
-  'projects.comingSoon': '[Prossimo progetto in arrivo...]',
-  'projects.comingSoon.cta': 'Potrebbe essere il tuo? →',
+    "Progetti personali: i brand sono inventati, il codice è vero e online su Vercel. Ognuno ha la sua art direction, dall'editoriale anni '90 alla dashboard SaaS industriale.",
+  'projects.concept': 'Concept personale',
+  'projects.look': 'Look {n} / {total}',
+  'projects.palette': 'Palette',
+  'projects.preview.alt': '{title}: screenshot della homepage',
+  'projects.outro': 'Hai un brand che ha bisogno di un mondo tutto suo?',
+  'projects.outro.cta': 'Parliamone →',
   'projects.card.live': 'Visita il sito ↗',
   'projects.card.newTab': '(si apre in una nuova scheda)',
-  'projects.card.soon': 'Case study in arrivo',
-  'category.web-app': 'Web App',
-  'category.editorial': 'Editoriale',
-  'category.landing': 'Landing Page',
-  'category.interactive': 'Interattivo',
-  'category.dashboard': 'Dashboard',
   'project.office-99.subtitle': 'Showcase editoriale retrò per agenzia',
   'project.office-99.description':
     "Un'estetica da ufficio anni '90 reinterpretata in un'esperienza editoriale high-fashion.",
@@ -253,38 +294,34 @@ const it: Dictionary = {
   'project.nexus-operations.description':
     'Una dashboard SaaS industriale per ERP e KPI, pensata per dati densi ma leggibili.',
 
-  'about.index': '(02) — Chi sono & Storia',
   'about.title': 'La storia di',
   'about.lead':
-    "Metà amante della moda, metà ingegnera del software: due anime, un solo mestiere. Ecco come {name} è passata dal Venezuela a scrivere Angular in Italia con l'occhio di una stylist.",
+    "Metà amante della moda, metà ingegnera del software: due anime, un solo mestiere. Ecco come sono passata dal Venezuela a scrivere Angular in Italia con l'occhio di una stylist.",
   'about.alt':
     '{name} — avatar 3D a figura intera con bomber in pelle bordeaux, t-shirt bianca, jeans e sneakers bianche',
   'story.origins.kicker': 'Le origini',
   'story.origins.title': 'Nata in Venezuela, cresciuta tra tre lingue.',
   'story.origins.body':
-    "Valentina Andrea Camejo è cresciuta in Venezuela, nel 2017 si è trasferita in Italia e ha trascorso un anno a Dublino. Cambiare paese le ha insegnato ad adattarsi in fretta, ad ascoltare con attenzione e a comunicare con persone di ogni provenienza — in italiano, spagnolo e inglese.",
+    'Sono cresciuta in Venezuela, nel 2017 mi sono trasferita in Italia da sola e ho trascorso un anno a Dublino. Cambiare paese mi ha insegnato ad adattarmi in fretta, ad ascoltare con attenzione e a comunicare con persone di ogni provenienza, in italiano, spagnolo e inglese.',
   'story.origins.italy': 'Italia · 2017',
   'story.origins.dublin': 'Dublino',
   'story.design.kicker': "L'occhio del design",
   'story.design.title': 'Formata nella moda, fluente nel linguaggio visivo.',
   'story.design.body':
-    'Prima di scrivere una sola riga di codice, Valentina Camejo ha studiato Fashion Design a Bologna e Personal Styling/Shopping al Condé Nast College di Madrid. Composizione, teoria del colore e analisi dei trend hanno affinato una sensibilità estetica che oggi traduce in UI/UX di alto livello.',
+    "Prima di scrivere una sola riga di codice ho studiato Fashion Design a Bologna e Personal Styling/Shopping al Condé Nast College di Madrid. Composizione, teoria del colore e analisi dei trend hanno affinato l'occhio che oggi porto nella UI/UX.",
   'story.design.bologna': 'Bologna',
   'story.engineering.kicker': 'Ingegneria & Full-Stack',
   'story.engineering.title': 'Dallo sketchbook al codice in produzione.',
   'story.engineering.body':
-    "Una specializzazione post-diploma IFTS in Sviluppo Software al Cisita Parma ha trasformato Valentina, seguita da 4 anni sul campo in KEDOS srl a costruire front-end Angular supportati da Java, SQL, AWS e Docker.",
+    "Una specializzazione post-diploma IFTS in Sviluppo Software al Cisita Parma mi ha resa un'ingegnera, seguita da 4 anni in KEDOS srl a costruire front-end Angular supportati da Java, SQL, AWS e Docker.",
   'story.ai.kicker': "Workflow con l'AI",
   'story.ai.title': 'Gusto umano, velocità da macchina.',
   'story.ai.body':
-    "Strumenti di AI come Claude Code e Gemini fanno parte del workflow di Valentina Camejo: prototipazione più rapida, refactoring più precisi e più tempo per i dettagli che rendono un'interfaccia davvero giusta.",
+    "Claude Code e Gemini fanno parte del mio modo di lavorare: prototipi più rapidi, refactoring più precisi e più tempo per i dettagli che rendono un'interfaccia davvero giusta.",
   'story.ai.assisted': 'Sviluppo assistito da AI',
 
-  'timeline.index': '(03) — Percorso',
   'timeline.title.pre': 'Esperienza e',
   'timeline.title.em': 'formazione',
-  'timeline.filter.label': 'Filtra il percorso',
-  'timeline.filter.all': 'Tutto',
   'timeline.kind.work': 'Lavoro',
   'timeline.kind.education': 'Formazione',
   'timeline.present': 'Oggi',
@@ -308,12 +345,10 @@ const it: Dictionary = {
   'exp.pio-xii.role': 'Diploma di Liceo Scientifico',
   'exp.pio-xii.description': 'Studi di liceo scientifico.',
 
-  'skills.index': '(04) — Skills & AI',
   'skills.title.pre': 'Lo stack ',
   'skills.title.em': 'tech & AI',
   'skills.title.post': '.',
-  'skills.lead':
-    '{count} strumenti tra design, ingegneria e AI. Passa sopra un blocco per metterlo in evidenza.',
+  'skills.lead': 'Quello che uso ogni giorno, dal primo frame in Figma al deploy.',
   'skills.group.frontend': 'Frontend',
   'skills.group.design': 'UI/UX & Design',
   'skills.group.backend': 'Backend & Dati',
@@ -321,13 +356,13 @@ const it: Dictionary = {
   'skill.colorTheory': 'Teoria del colore',
   'skill.trendAnalysis': 'Analisi dei trend',
 
-  'contact.index': '(05) — Contatti',
   'contact.title.pre': 'Creiamo qualcosa di ',
   'contact.title.highlight': 'audace.',
   'contact.lead':
-    'Scrivimi: rispondo in fretta.',
+    'Aperta a ruoli da front-end e UX engineer e a progetti web freelance. Scrivimi: rispondo in fretta.',
   'contact.email.label': 'Email',
-  'contact.email.copy': 'Clicca per copiare',
+  'contact.email.write': 'Scrivimi →',
+  'contact.email.copy': 'Copia indirizzo',
   'contact.email.copied': 'Copiata! ✓',
   'contact.linkedin.value': 'Connettiamoci',
   'contact.linkedin.hint': 'Apri il profilo ↗',
@@ -340,10 +375,78 @@ const it: Dictionary = {
   'cv.current': 'Lingua attuale',
   'cv.close': 'Chiudi',
 
-  'footer.signature': 'Progettato e sviluppato con 🖤 da {name}',
+  'footer.signature': 'Progettato e sviluppato da {name}',
   'footer.rights': '© {year} {name}. Tutti i diritti riservati.',
   'footer.top': 'Torna su ↑',
   'footer.legal': 'Privacy & Note Legali',
+
+  // ---------- Off-Duty teaser (landing) ----------
+  'teaser.title': 'Oltre il codice.',
+  'teaser.lead':
+    "Outfit, un loop lo-fi e un'intervista doppia: il lato di me che non entra in un CV.",
+  'teaser.cta': 'Entra nel Dual Soul Lab',
+
+  // ---------- Ticker ----------
+  'ticker.dualSoul': 'La moda incontra il codice',
+  'ticker.angular': 'Angular & sviluppo con AI',
+  'ticker.route': 'Venezuela → Irlanda → Italia',
+
+  // ---------- Off-Duty page ----------
+  'offDuty.back': '← Torna al portfolio',
+  'offDuty.lead':
+    "Cosa indosso mentre programmo, cosa suona nelle mie cuffie e un'intervista con l'AI con cui costruisco ogni giorno.",
+  'offDuty.jump.label': 'Sezioni della pagina',
+  'offDuty.jump.lookbook': 'Lookbook',
+  'offDuty.jump.interview': 'Intervista',
+  'offDuty.jump.vibe': 'Vibe',
+
+  'lookbook.title.pre': 'Sette outfit, ',
+  'lookbook.title.em': 'un solo',
+  'lookbook.title.post': ' mindset.',
+  'lookbook.lead': 'Ogni look ha la sua modalità. Scegli un outfit e scopri cosa sto facendo.',
+  'lookbook.status': 'Status',
+  'lookbook.pick': 'Scegli un outfit',
+  'lookbook.prev': 'Outfit precedente',
+  'lookbook.next': 'Outfit successivo',
+  'lookbook.alt': '{name} — avatar 3D con {outfit}',
+
+  'interview.title.pre': "L'intervista ",
+  'interview.title.em': 'doppia',
+  'interview.title.post': '.',
+  'interview.lead': "L'AI fa le domande, Valentina risponde. Senza filtri, senza seconde prove.",
+  'interview.ai': "Chiede l'AI",
+  'interview.me': 'Valentina',
+  'interview.motto': 'Il motto',
+  'interview.q1.question':
+    'Il momento della rivelazione: quando hai capito che moda e codice potevano coesistere?',
+  'interview.q1.answer':
+    "Quando studiavo programmazione sentivo che la mia creatività sarebbe passata in secondo piano... ma quando ho iniziato a lavorare ho capito che non si tratta solo di scrivere codice, ma di capire l'utente e l'esperienza. Studiare fashion ha reso impossibile spegnere questo lato di me.",
+  'interview.q2.question': 'La tua più grande red flag visiva?',
+  'interview.q2.answer':
+    "L'estetica datata o trascurata. Siamo nel 2026: usiamo gli strumenti per spingere la creatività al massimo!",
+  'interview.q3.question': 'Il tuo superpotere in un progetto?',
+  'interview.q3.answer':
+    'Sono una problem solver nata. Sono nata in Venezuela e a 17 anni mi sono trasferita da sola in un altro paese, senza niente: ho dovuto imparare a risolvere, per forza. Con calma e pazienza si sistema tutto.',
+  'interview.q4.question': 'La tua scrivania ideale?',
+  'interview.q4.answer':
+    'Super pulita e organizzata. Acqua, telefono, cuffie, la task del momento e basta. Zero distrazioni.',
+  'interview.q5.question': 'La triade perfetta?',
+  'interview.q5.answer': 'Caffè, Dark Mode e lavorare di notte.',
+  'interview.q6.answer':
+    'Vivi il presente, ama quello che fai e sii fiero di quanta strada hai fatto.',
+
+  'vibe.title.pre': 'Ossessioni ',
+  'vibe.title.em': 'del momento.',
+  'vibe.lead': 'La colonna sonora e le piccole cose che alimentano questa stagione.',
+  'player.label': 'In riproduzione',
+  'player.play': 'Avvia il loop',
+  'player.pause': 'Metti in pausa il loop',
+  'player.loop': '∞ loop',
+  'player.note': 'Generata dal vivo nel tuo browser con la Web Audio API. In loop infinito.',
+  'player.unsupported': 'Il tuo browser non supporta la Web Audio API.',
+  'obsession.coffee': 'Matcha Latte & Espresso',
+  'obsession.cats': 'Video di gatti generati con AI',
+  'obsession.vogue': 'Archivi vintage di Vogue',
 
   // ---------- Legal ----------
   'legal.title': 'Privacy & Note Legali',
@@ -372,44 +475,33 @@ const es: Dictionary = {
   'header.available': 'Disponible',
   'lang.label': 'Idioma',
 
-  'hero.tag': 'Front-end Developer & apasionada del diseño UI/UX',
-  'hero.hello': 'Hola, soy',
-  'hero.title.pre': 'El',
-  'hero.title.outline': 'Alma Dual:',
-  'hero.title.where': 'donde la',
-  'hero.title.fashion': 'moda',
-  'hero.title.meets': 'se une al',
-  'hero.title.code': 'código.',
-  'hero.sub':
-    'Front-end Developer & UX Engineer que combina raíces italianas y venezolanas con un ojo para el diseño inspirado en la moda.',
-  'hero.lead':
-    'Creo experiencias digitales con buen ojo para el diseño e ingeniería sólida. De Venezuela a Italia y Dublín, construyendo la web de 2026.',
-  'hero.cta.projects': 'Ver proyectos',
+  'hero.statement.where': 'Donde la',
+  'hero.statement.fashion': 'moda',
+  'hero.statement.meets': 'se une al',
+  'hero.statement.code': 'código.',
+  'hero.proof':
+    'Cuatro años construyendo front-ends en Angular en producción en KEDOS srl, con formación en diseño de moda en Bolonia y en el Condé Nast College de Madrid.',
+  'hero.cta.projects': 'Ver los trabajos',
   'hero.cta.contact': 'Escríbeme',
-  'hero.sticker.age': '[{age} años]',
+  'hero.sticker.angular': '[Angular · 4 años en prod]',
   'hero.sticker.languages': '[{count} idiomas]',
-  'hero.sticker.ai': '[Dev con IA]',
+  'hero.sticker.ai': '[Flujo con IA]',
   'hero.alt':
     '{name} — avatar 3D con cabello largo ondulado, lentes negros y chaqueta bomber de cuero vinotinto',
 
-  'projects.index': '(01) — Proyectos',
-  'projects.title.pre': 'Trabajos ',
-  'projects.title.em': 'elegidos',
-  'projects.title.post': ', atrevidos por diseño.',
+  'projects.title.pre': 'Cinco conceptos, cinco ',
+  'projects.title.em': 'mundos',
+  'projects.title.post': '.',
   'projects.lead':
-    'Cinco proyectos, cinco personalidades: del editorial de alta moda a dashboards SaaS industriales. Filtra por categoría y pasa el cursor por las tarjetas para jugar.',
-  'projects.filter.label': 'Filtrar proyectos por categoría',
-  'projects.filter.all': 'Todos',
-  'projects.comingSoon': '[Próximo proyecto muy pronto...]',
-  'projects.comingSoon.cta': '¿Será el tuyo? →',
+    'Proyectos personales: las marcas son inventadas, el código es real y está online en Vercel. Cada uno tiene su propia dirección de arte, del editorial noventero al dashboard SaaS industrial.',
+  'projects.concept': 'Concepto personal',
+  'projects.look': 'Look {n} / {total}',
+  'projects.palette': 'Paleta',
+  'projects.preview.alt': '{title}: captura de la página de inicio',
+  'projects.outro': '¿Tienes una marca que necesita un mundo propio?',
+  'projects.outro.cta': 'Hablemos →',
   'projects.card.live': 'Visita el sitio ↗',
   'projects.card.newTab': '(se abre en una pestaña nueva)',
-  'projects.card.soon': 'Caso de estudio pronto',
-  'category.web-app': 'App Web',
-  'category.editorial': 'Editorial',
-  'category.landing': 'Landing Page',
-  'category.interactive': 'Interactivo',
-  'category.dashboard': 'Dashboard',
   'project.office-99.subtitle': 'Showcase editorial retro para agencia',
   'project.office-99.description':
     'Una estética de oficina de finales de los 90 remezclada en una experiencia editorial de alta moda.',
@@ -426,38 +518,34 @@ const es: Dictionary = {
   'project.nexus-operations.description':
     'Un dashboard SaaS industrial de ERP y KPI, enfocado en datos densos pero legibles.',
 
-  'about.index': '(02) — Sobre mí & Historia',
   'about.title': 'La historia de',
   'about.lead':
-    'Mitad amante de la moda, mitad ingeniera de software: dos almas, un solo oficio. Así es como {name} pasó de Venezuela a programar en Angular en Italia con ojo de estilista.',
+    'Mitad amante de la moda, mitad ingeniera de software: dos almas, un solo oficio. Así pasé de Venezuela a programar en Angular en Italia con ojo de estilista.',
   'about.alt':
     '{name} — avatar 3D de cuerpo entero con bomber de cuero vinotinto, franela blanca, blue jeans y zapatos deportivos blancos',
   'story.origins.kicker': 'Los orígenes',
   'story.origins.title': 'Nacida en Venezuela, criada entre tres idiomas.',
   'story.origins.body':
-    'Valentina Andrea Camejo creció en Venezuela, se mudó a Italia en 2017 y pasó un año en Dublín. Cambiar de país le enseñó a adaptarse rápido, a escuchar con atención y a comunicarse con gente de todas partes — en italiano, español e inglés.',
+    'Crecí en Venezuela, me mudé sola a Italia en 2017 y pasé un año en Dublín. Cambiar de país me enseñó a adaptarme rápido, a escuchar con atención y a comunicarme con gente de todas partes, en italiano, español e inglés.',
   'story.origins.italy': 'Italia · 2017',
   'story.origins.dublin': 'Dublín',
   'story.design.kicker': 'El ojo para el diseño',
   'story.design.title': 'Formada en moda, experta en lenguaje visual.',
   'story.design.body':
-    'Antes de escribir una sola línea de código, Valentina Camejo estudió Diseño de Moda en Bolonia y Personal Styling/Shopping en el Condé Nast College de Madrid. La composición, la teoría del color y el análisis de tendencias afinaron una sensibilidad estética que hoy traduce en UI/UX de alto nivel.',
+    'Antes de escribir una sola línea de código, estudié Diseño de Moda en Bolonia y Personal Styling/Shopping en el Condé Nast College de Madrid. La composición, la teoría del color y el análisis de tendencias afinaron el ojo que hoy llevo a la UI/UX.',
   'story.design.bologna': 'Bolonia',
   'story.engineering.kicker': 'Ingeniería y Full-Stack',
   'story.engineering.title': 'Del cuaderno de bocetos al código en producción.',
   'story.engineering.body':
-    'Una especialización post-bachillerato IFTS en Desarrollo de Software en Cisita Parma convirtió a Valentina Andrea Camejo en ingeniera, seguida de 4 años en el campo en KEDOS srl construyendo front-ends en Angular con Java, SQL, AWS y Docker.',
+    'Una especialización post-bachillerato IFTS en Desarrollo de Software en Cisita Parma me convirtió en ingeniera, seguida de 4 años en KEDOS srl construyendo front-ends en Angular con Java, SQL, AWS y Docker.',
   'story.ai.kicker': 'Flujo de trabajo con IA',
   'story.ai.title': 'Gusto humano, velocidad de máquina.',
   'story.ai.body':
-    'Herramientas de IA como Claude Code y Gemini forman parte del flujo de trabajo de Valentina Camejo: prototipos más rápidos, refactors más precisos y más tiempo para los detalles que hacen que una interfaz se sienta perfecta.',
+    'Claude Code y Gemini forman parte de mi forma de trabajar: prototipos más rápidos, refactors más precisos y más tiempo para los detalles que hacen que una interfaz se sienta perfecta.',
   'story.ai.assisted': 'Desarrollo asistido por IA',
 
-  'timeline.index': '(03) — Trayectoria',
   'timeline.title.pre': 'Experiencia y',
   'timeline.title.em': 'formación',
-  'timeline.filter.label': 'Filtrar trayectoria',
-  'timeline.filter.all': 'Todo',
   'timeline.kind.work': 'Trabajo',
   'timeline.kind.education': 'Formación',
   'timeline.present': 'Presente',
@@ -481,12 +569,10 @@ const es: Dictionary = {
   'exp.pio-xii.role': 'Bachillerato en Ciencias',
   'exp.pio-xii.description': 'Estudios de bachillerato en ciencias.',
 
-  'skills.index': '(04) — Skills & IA',
   'skills.title.pre': 'El stack ',
   'skills.title.em': 'tech & IA',
   'skills.title.post': '.',
-  'skills.lead':
-    '{count} herramientas entre diseño, ingeniería e IA. Pasa el cursor por un bloque para destacarlo.',
+  'skills.lead': 'Lo que uso cada día, del primer frame en Figma al deploy.',
   'skills.group.frontend': 'Frontend',
   'skills.group.design': 'UI/UX y Diseño',
   'skills.group.backend': 'Backend y Datos',
@@ -494,13 +580,13 @@ const es: Dictionary = {
   'skill.colorTheory': 'Teoría del color',
   'skill.trendAnalysis': 'Análisis de tendencias',
 
-  'contact.index': '(05) — Contacto',
   'contact.title.pre': 'Creemos algo ',
   'contact.title.highlight': 'atrevido.',
   'contact.lead':
-    'Escríbeme, respondo rapidito.',
+    'Abierta a puestos de front-end y UX engineering, y a proyectos web freelance. Escríbeme, respondo rapidito.',
   'contact.email.label': 'Correo',
-  'contact.email.copy': 'Haz clic para copiar',
+  'contact.email.write': 'Escríbeme →',
+  'contact.email.copy': 'Copiar dirección',
   'contact.email.copied': '¡Copiado! ✓',
   'contact.linkedin.value': 'Conectemos',
   'contact.linkedin.hint': 'Abrir perfil ↗',
@@ -513,10 +599,78 @@ const es: Dictionary = {
   'cv.current': 'Idioma actual',
   'cv.close': 'Cerrar',
 
-  'footer.signature': 'Diseñado y programado con 🖤 por {name}',
+  'footer.signature': 'Diseñado y programado por {name}',
   'footer.rights': '© {year} {name}. Todos los derechos reservados.',
   'footer.top': 'Volver arriba ↑',
   'footer.legal': 'Privacidad y Aviso Legal',
+
+  // ---------- Off-Duty teaser (landing) ----------
+  'teaser.title': 'Más allá del código.',
+  'teaser.lead':
+    'Outfits, un loop lo-fi y una entrevista doble: el lado de mí que no cabe en un CV.',
+  'teaser.cta': 'Entra al Dual Soul Lab',
+
+  // ---------- Ticker ----------
+  'ticker.dualSoul': 'La moda se une al código',
+  'ticker.angular': 'Angular y desarrollo con IA',
+  'ticker.route': 'Venezuela → Irlanda → Italia',
+
+  // ---------- Off-Duty page ----------
+  'offDuty.back': '← Volver al portfolio',
+  'offDuty.lead':
+    'Lo que me pongo mientras programo, lo que suena en mis audífonos y una entrevista con la IA con la que construyo todos los días.',
+  'offDuty.jump.label': 'Secciones de la página',
+  'offDuty.jump.lookbook': 'Lookbook',
+  'offDuty.jump.interview': 'Entrevista',
+  'offDuty.jump.vibe': 'Vibe',
+
+  'lookbook.title.pre': 'Siete outfits, ',
+  'lookbook.title.em': 'un solo',
+  'lookbook.title.post': ' mindset.',
+  'lookbook.lead': 'Cada look tiene su propio modo. Elige un outfit y descubre en qué ando.',
+  'lookbook.status': 'Status',
+  'lookbook.pick': 'Elige un outfit',
+  'lookbook.prev': 'Outfit anterior',
+  'lookbook.next': 'Outfit siguiente',
+  'lookbook.alt': '{name} — avatar 3D con {outfit}',
+
+  'interview.title.pre': 'La entrevista ',
+  'interview.title.em': 'doble',
+  'interview.title.post': '.',
+  'interview.lead': 'La IA pregunta, Valentina responde. Sin filtros, sin repetir tomas.',
+  'interview.ai': 'Pregunta la IA',
+  'interview.me': 'Valentina',
+  'interview.motto': 'El lema',
+  'interview.q1.question':
+    'Ese momento de revelación: ¿cuándo entendiste que la moda y el código podían coexistir?',
+  'interview.q1.answer':
+    'Cuando estaba estudiando programación, sentía que mi creatividad iba a quedar en segundo plano... pero al empezar a trabajar entendí que no se trata solo de escribir código, sino de entender al usuario y la experiencia. Estudiar fashion hizo que esta faceta fuera imposible de apagar.',
+  'interview.q2.question': '¿Tu mayor red flag visual?',
+  'interview.q2.answer':
+    'La estética anticuada o descuidada. ¡Estamos en el 2026, usemos las herramientas para explotar la creatividad al máximo!',
+  'interview.q3.question': '¿Tu superpower en un proyecto?',
+  'interview.q3.answer':
+    'Soy problem solver nata. Nací en Venezuela y a los 17 me mudé sola a otro país sin nada: me tocó aprender a resolver sí o sí. Con calma y paciencia todo se arregla.',
+  'interview.q4.question': '¿Tu mesa de trabajo ideal?',
+  'interview.q4.answer':
+    'Súper limpio y organizado. Agua, teléfono, audífonos, tarea y ya. Cero distracciones.',
+  'interview.q5.question': '¿Tríada perfecta?',
+  'interview.q5.answer': 'Café, Dark Mode y trabajar de noche.',
+  'interview.q6.answer':
+    'Vive el presente, ama lo que haces y siéntete orgulloso de hasta dónde has llegado.',
+
+  'vibe.title.pre': 'Obsesiones ',
+  'vibe.title.em': 'del momento.',
+  'vibe.lead': 'El soundtrack y las cositas que alimentan esta temporada.',
+  'player.label': 'Sonando ahora',
+  'player.play': 'Reproducir el loop',
+  'player.pause': 'Pausar el loop',
+  'player.loop': '∞ loop',
+  'player.note': 'Generada en vivo en tu navegador con la Web Audio API. En loop infinito.',
+  'player.unsupported': 'Tu navegador no soporta la Web Audio API.',
+  'obsession.coffee': 'Matcha Latte & Espresso',
+  'obsession.cats': 'Videos de gatos hechos con IA',
+  'obsession.vogue': 'Archivos vintage de Vogue',
 
   // ---------- Legal ----------
   'legal.title': 'Privacidad y Aviso Legal',

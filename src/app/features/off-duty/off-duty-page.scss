@@ -1,0 +1,107 @@
+@use 'mixins' as *;
+
+.od-hero {
+  padding-block: clamp(48px, 8vw, 112px) clamp(56px, 8vw, 120px);
+
+  &__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: start;
+    gap: 1.5rem;
+  }
+
+  &__back {
+    position: relative;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 2px solid currentColor;
+    transition: color 0.2s;
+
+    // 44px-tall hit area without moving the underline (the gap below is 1.5rem)
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -0.8rem -0.5rem;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-accent-pink);
+    }
+  }
+
+  &__title {
+    // "SOUL LAB" runs ~7.5× the font size wide: 9rem keeps it inside the 1280px container
+    font-size: clamp(3rem, 11vw, 9rem);
+    line-height: 0.88;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+
+    em {
+      font-style: normal;
+      color: var(--color-accent-pink);
+    }
+  }
+
+  // Line breaks are fixed, not left to the measure: "SOUL LAB" sits right at the edge
+  // of the column at some widths, so a natural wrap flipped when the web font swapped in
+  // (0.27 CLS). Phones: LAB gets its own line. From sm: SOUL LAB never wraps.
+  &__line {
+    display: block;
+
+    @include up(sm) {
+      white-space: nowrap;
+    }
+
+    em {
+      display: block;
+
+      @include up(sm) {
+        display: inline;
+      }
+    }
+  }
+
+  &__outline {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--color-dark);
+  }
+
+  &__lead {
+    max-width: 52ch;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: color-mix(in srgb, var(--color-dark) 72%, transparent);
+  }
+
+  &__jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  &__chip {
+    padding: 0.6rem 1.1rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid var(--color-dark);
+    border-radius: var(--radius-pill);
+    background: var(--color-bg);
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+
+    &:hover {
+      background: var(--color-dark);
+      color: var(--color-accent-lime);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--color-accent-violet);
+      outline-offset: 3px;
+    }
+  }
+}

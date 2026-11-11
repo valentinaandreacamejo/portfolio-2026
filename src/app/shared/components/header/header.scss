@@ -24,6 +24,8 @@
     letter-spacing: -0.02em;
     text-transform: uppercase;
     white-space: nowrap;
+    // taller hit area without moving the wordmark
+    padding-block: 0.75rem;
   }
 
   &__slash {
@@ -40,15 +42,15 @@
     gap: 0.5rem;
     padding: 0.4rem 0.9rem;
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     white-space: nowrap;
     color: var(--color-dark);
     background: var(--color-accent-lime);
+    border: 1.5px solid var(--color-dark);
     border-radius: var(--radius-pill);
-    box-shadow: 0 0 24px color-mix(in srgb, var(--color-accent-lime) 70%, transparent);
 
     // visible on tablets (burger menu) and wide desktops; hidden where the inline nav needs the room
     @include up(md) {
@@ -64,26 +66,21 @@
     }
   }
 
+  // static: an endless ping on an always-visible badge is noise, the colour says it
   &__dot {
-    position: relative;
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #16a34a;
-
-    &::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: inherit;
-      animation: ping 1.6s var(--ease-out-expo) infinite;
-    }
+    background: var(--color-status-ok);
   }
 
   &__burger {
     display: grid;
+    align-content: center;
+    justify-items: center;
     gap: 6px;
+    min-width: 44px;
+    min-height: 44px;
     margin-left: auto;
     padding: 12px 8px;
 
@@ -103,6 +100,10 @@
     height: 2px;
     background: var(--color-dark);
     transition: transform 0.3s var(--ease-out-expo);
+
+    @include reduced-motion {
+      transition: none;
+    }
   }
 
   &__burger[aria-expanded='true'] &__burger-line {
@@ -139,6 +140,11 @@
       transform: none;
     }
 
+    // reduced motion: the menu fades in place
+    @include reduced-motion {
+      transform: none;
+    }
+
     @include up(lg) {
       position: static;
       display: flex;
@@ -169,6 +175,24 @@
     &:focus-visible {
       background: var(--color-dark);
       color: var(--color-accent-lime);
+    }
+
+    // the personal page gets a badge, not a plain link
+    &--off-duty {
+      justify-self: start;
+      margin-left: 0.25rem;
+      padding-inline: 0.75rem;
+      color: #fff;
+      background: var(--color-dark);
+      border-radius: var(--radius-pill);
+      box-shadow: inset 0 0 0 1.5px var(--color-dark);
+
+      &:hover,
+      &:focus-visible,
+      &.is-active {
+        color: var(--color-dark);
+        background: var(--color-accent-lime);
+      }
     }
   }
 }
@@ -205,9 +229,11 @@
   }
 
   &__btn {
-    padding: 0.3rem 0.45rem;
+    min-width: 32px;
+    min-height: 32px;
+    padding: 0.3rem 0.5rem;
     font-family: var(--font-mono);
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.02em;
     white-space: nowrap;
@@ -234,10 +260,8 @@
   }
 }
 
-@keyframes ping {
-  75%,
-  100% {
-    transform: scale(2.4);
-    opacity: 0;
-  }
+// touch: the switcher sits in the open menu, where a thumb needs a bigger target
+.lang--menu .lang__btn {
+  min-width: 44px;
+  min-height: 44px;
 }

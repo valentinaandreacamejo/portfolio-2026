@@ -1,0 +1,334 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T13:00:00Z",
+  "title": "Design System: Portfolio 2026 — Valentina Andrea Camejo",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#fafafc",
+        "tonalRamp": [
+          "oklch(15% 0.004 285)",
+          "oklch(27% 0.004 285)",
+          "oklch(40% 0.004 285)",
+          "oklch(52% 0.004 285)",
+          "oklch(64% 0.004 285)",
+          "oklch(76% 0.004 285)",
+          "oklch(88% 0.004 285)",
+          "oklch(98.5% 0.003 285)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#121316",
+        "tonalRamp": [
+          "oklch(18% 0.006 270)",
+          "oklch(28% 0.006 270)",
+          "oklch(40% 0.006 270)",
+          "oklch(52% 0.005 270)",
+          "oklch(64% 0.005 270)",
+          "oklch(76% 0.004 270)",
+          "oklch(88% 0.003 270)",
+          "oklch(96% 0.002 270)"
+        ]
+      },
+      "acid-lime": {
+        "role": "primary",
+        "displayName": "Acid Lime",
+        "canonical": "#ccff00",
+        "tonalRamp": [
+          "oklch(25% 0.06 125)",
+          "oklch(37% 0.1 125)",
+          "oklch(50% 0.14 125)",
+          "oklch(63% 0.18 125)",
+          "oklch(76% 0.21 125)",
+          "oklch(88% 0.23 125)",
+          "oklch(93% 0.13 125)",
+          "oklch(97% 0.06 125)"
+        ]
+      },
+      "hot-pink": {
+        "role": "secondary",
+        "displayName": "Hot Pink",
+        "canonical": "#ec4899",
+        "tonalRamp": [
+          "oklch(22% 0.07 355)",
+          "oklch(34% 0.12 355)",
+          "oklch(46% 0.17 355)",
+          "oklch(57% 0.2 355)",
+          "oklch(66% 0.21 355)",
+          "oklch(76% 0.15 355)",
+          "oklch(87% 0.08 355)",
+          "oklch(95% 0.03 355)"
+        ]
+      },
+      "electric-violet": {
+        "role": "tertiary",
+        "displayName": "Electric Violet",
+        "canonical": "#7c3aed",
+        "tonalRamp": [
+          "oklch(22% 0.08 293)",
+          "oklch(33% 0.13 293)",
+          "oklch(45% 0.18 293)",
+          "oklch(55% 0.22 293)",
+          "oklch(61% 0.22 293)",
+          "oklch(73% 0.15 293)",
+          "oklch(85% 0.08 293)",
+          "oklch(95% 0.03 293)"
+        ]
+      },
+      "pool-cyan": {
+        "role": "tertiary",
+        "displayName": "Pool Cyan",
+        "canonical": "#06b6d4",
+        "tonalRamp": [
+          "oklch(22% 0.04 215)",
+          "oklch(33% 0.07 215)",
+          "oklch(45% 0.1 215)",
+          "oklch(57% 0.12 215)",
+          "oklch(71% 0.13 215)",
+          "oklch(80% 0.1 215)",
+          "oklch(89% 0.06 215)",
+          "oklch(96% 0.02 215)"
+        ]
+      },
+      "frosted-card": {
+        "role": "neutral",
+        "displayName": "Frosted Card",
+        "canonical": "rgba(255, 255, 255, 0.9)"
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(0, 0, 0, 0.08)"
+      },
+      "status-ok": {
+        "role": "neutral",
+        "displayName": "Status Green",
+        "canonical": "#16a34a"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero, page titles, footer signature."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles, max 16ch, one emphasised word."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card and chapter titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Section leads, max 56ch, ink at 70%."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase mono for buttons, nav, tags, indexes."
+      }
+    },
+    "shadows": [
+      {
+        "name": "lift-sm",
+        "value": "4px 4px 0 var(--color-dark)",
+        "purpose": "Buttons on hover; stickers at rest (3px)."
+      },
+      {
+        "name": "lift-md",
+        "value": "6px 6px 0 var(--color-dark)",
+        "purpose": "Contact cards (paper on ink), Off-Duty controls."
+      },
+      {
+        "name": "lift-lg",
+        "value": "8px 8px 0 var(--accent)",
+        "purpose": "Project cards on hover; 10px for lookbook and interview frames."
+      },
+      {
+        "name": "inset-outline",
+        "value": "inset 0 0 0 1.5px var(--color-dark)",
+        "purpose": "Active pills inside the header without layout shift."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Default curve: hero entrance, shadows, tilts, menu slide, state changes."
+      },
+      {
+        "name": "ease-spring",
+        "value": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+        "purpose": "Button lift (0.35s)."
+      },
+      {
+        "name": "marquee",
+        "value": "linear 32s / 40s reverse",
+        "purpose": "Ticker bands; paused on hover."
+      },
+      {
+        "name": "hero-entrance",
+        "value": "name 0ms/640ms rise 16px · photo 60ms/700ms scale .97 · statement 110ms · proof 190ms · CTAs 250ms · stickers 300/340/370ms stamp, all --ease-out-expo",
+        "purpose": "The page's one authored entrance, once per visit. No other section animates in."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call to action: ink pill with lime mono label; lifts with a pink printed shadow.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">Explore projects</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.6em; padding: 1em 1.6em; font-family: 'Space Mono', ui-monospace, monospace; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border: 2px solid #121316; border-radius: 999px; cursor: pointer; transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s; } .ds-btn:hover { transform: translate(-3px, -3px); box-shadow: 4px 4px 0 #121316; } .ds-btn:active { transform: none; box-shadow: none; } .ds-btn:focus-visible { outline: 3px solid #7c3aed; outline-offset: 3px; } .ds-btn-primary { background: #121316; color: #ccff00; } .ds-btn-primary:hover { box-shadow: 4px 4px 0 #ec4899; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action: outlined ink pill that fills lime on hover.",
+      "html": "<button class=\"ds-btn-ghost\">Get in touch</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; padding: 1em 1.6em; font-family: 'Space Mono', ui-monospace, monospace; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: transparent; color: #121316; border: 2px solid #121316; border-radius: 999px; cursor: pointer; transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s; } .ds-btn-ghost:hover { background: #ccff00; transform: translate(-3px, -3px); box-shadow: 4px 4px 0 #121316; } .ds-btn-ghost:active { transform: none; box-shadow: none; } .ds-btn-ghost:focus-visible { outline: 3px solid #7c3aed; outline-offset: 3px; }"
+    },
+    {
+      "name": "Tag & Category Chip",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Mono uppercase pills: outlined tag and ink-filled category chip.",
+      "html": "<span class=\"ds-tag\">Angular</span> <span class=\"ds-chip\">Web App</span>",
+      "css": ".ds-tag, .ds-chip { display: inline-flex; align-items: center; font-family: 'Space Mono', ui-monospace, monospace; text-transform: uppercase; border-radius: 999px; } .ds-tag { padding: 0.35em 0.9em; font-size: 0.75rem; letter-spacing: 0.08em; color: #121316; border: 1px solid currentColor; } .ds-chip { padding: 0.25em 0.7em; font-size: 0.7rem; background: #121316; color: #fafafc; }"
+    },
+    {
+      "name": "Language Switcher",
+      "kind": "chip",
+      "refersTo": "nav-link",
+      "description": "Segmented pill group; active item fills lime with an inset ink outline.",
+      "html": "<div class=\"ds-lang\"><button class=\"ds-lang-btn is-active\">IT</button><button class=\"ds-lang-btn\">ES</button><button class=\"ds-lang-btn\">EN</button></div>",
+      "css": ".ds-lang { display: inline-flex; gap: 2px; padding: 3px; border: 1.5px solid #121316; border-radius: 999px; } .ds-lang-btn { padding: 0.3rem 0.45rem; font-family: 'Space Mono', ui-monospace, monospace; font-size: 0.68rem; font-weight: 700; background: none; border: 0; border-radius: 999px; color: rgba(18, 19, 22, 0.6); cursor: pointer; transition: background-color 0.2s, color 0.2s; } .ds-lang-btn:hover { color: #121316; } .ds-lang-btn:focus-visible { outline: 2px solid #7c3aed; outline-offset: 2px; } .ds-lang-btn.is-active { color: #121316; background: #ccff00; box-shadow: inset 0 0 0 1.5px #121316; }"
+    },
+    {
+      "name": "Navigation Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Header nav link: mono uppercase, inverts to ink with lime text on hover/focus.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">About</a><a class=\"ds-nav-link\" href=\"#\">Projects</a><a class=\"ds-nav-link\" href=\"#\">Contact</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 0.25rem; } .ds-nav-link { padding: 0.5rem 0.45rem; font-family: 'Space Mono', ui-monospace, monospace; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #121316; text-decoration: none; border-radius: 8px; transition: background-color 0.2s, color 0.2s; } .ds-nav-link:hover, .ds-nav-link:focus-visible { background: #121316; color: #ccff00; outline: none; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card-project",
+      "description": "Signature card: accent cover with a giant rotated Syne glyph, 2px ink frame, accent printed shadow on hover.",
+      "html": "<article class=\"ds-card\" style=\"--accent:#ec4899;--on-accent:#fff\"><div class=\"ds-card-cover\"><span class=\"ds-card-num\">02</span><span class=\"ds-card-glyph\">!</span></div><div class=\"ds-card-body\"><h3 class=\"ds-card-title\">DANG! STUDIO</h3><p class=\"ds-card-sub\">Gen Z Anti-Corporate Social Agency</p><a class=\"ds-card-link\" href=\"#\">Visit site ↗</a></div></article>",
+      "css": ".ds-card { width: 320px; overflow: hidden; background: rgba(255, 255, 255, 0.9); border: 2px solid #121316; border-radius: 28px; transition: box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); } .ds-card:hover { box-shadow: 8px 8px 0 var(--accent); transform: translate(-2px, -2px); } .ds-card-cover { position: relative; display: grid; place-items: center; aspect-ratio: 16 / 10; background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.35), transparent 50%), var(--accent); color: var(--on-accent); border-bottom: 2px solid #121316; } .ds-card-num { position: absolute; top: 14px; left: 16px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700; } .ds-card-glyph { font-family: 'Syne', sans-serif; font-size: 6rem; font-weight: 800; line-height: 1; transform: rotate(-6deg); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); } .ds-card:hover .ds-card-glyph { transform: rotate(4deg) scale(1.12); } .ds-card-body { display: flex; flex-direction: column; gap: 0.75rem; padding: 1.5rem; } .ds-card-title { margin: 0; font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; line-height: 0.95; letter-spacing: -0.03em; } .ds-card-sub { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; } .ds-card-link { align-self: flex-start; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: #121316; text-decoration: none; border-bottom: 2px solid var(--accent); } .ds-card-link:focus-visible { outline: 3px solid #7c3aed; outline-offset: 3px; }"
+    },
+    {
+      "name": "Section Head",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "Every section opens straight on a Syne headline with one emphasised word, then a muted lead. No eyebrow.",
+      "html": "<header class=\"ds-head\"><h2 class=\"ds-head-title\">Five concepts, five <em>worlds</em>.</h2><p class=\"ds-head-lead\">Self-initiated projects: the brands are invented, the code is real.</p></header>",
+      "css": ".ds-head { display: grid; gap: 1.25rem; } .ds-head-title { margin: 0; max-width: 16ch; font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 800; line-height: 0.95; letter-spacing: -0.03em; color: #121316; } .ds-head-title em { font-style: normal; color: #ec4899; } .ds-head-lead { margin: 0; max-width: 56ch; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; color: rgba(18, 19, 22, 0.7); }"
+    },
+    {
+      "name": "Ticker Band",
+      "kind": "custom",
+      "refersTo": "ticker",
+      "description": "Tilted full-bleed marquee band used as a section divider.",
+      "html": "<div class=\"ds-ticker\"><span>Angular</span><span class=\"ds-ticker-sep\">✺</span><span>UX Engineering</span><span class=\"ds-ticker-sep\">✺</span><span>Fashion</span></div>",
+      "css": ".ds-ticker { display: flex; gap: 1.5rem; align-items: center; padding: 0.9rem 1.5rem; background: #ccff00; color: #121316; border-block: 2px solid #121316; transform: rotate(-1.5deg); font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; text-transform: uppercase; white-space: nowrap; overflow: hidden; } .ds-ticker-sep { font-size: 1.25rem; color: #ec4899; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Dual Soul Studio",
+    "overview": "A single studio with two workbenches. On one side the editorial bench: oversized Syne headlines, stickers, tilted tickers, colour used like fabric swatches pinned to a mood board. On the other the engineering bench: Space Mono labels and controls, 2px ink borders, tidy grids that never break on a 320px phone. The two benches share one floor: cool off-white paper, near-black ink and four loud accents. Neither soul wins; every surface should show both.\n\nThe physical language is tactile and brazen. Buttons, cards and badges behave like printed objects: solid 2px ink outlines, hard offset shadows with no blur, and a hover that lifts the object up and to the left so its shadow shows. Motion is springy and quick on objects, and the page has exactly one authored entrance: the hero, once per visit. Sections don't animate in on scroll, and nothing loops except the ticker. Density is generous: sections breathe with up to 160px between them, and type does most of the work.\n\nThe system has no gradients, blurred colour blobs, frosted glass or soft coloured glows: the `--gradient-hero` token and `gradient-text` mixin were deleted. The only blurs left are functional (the sticky header and dialog backdrops); the only gradients are the material rendering of the Off-Duty music player and the faint diagonal stripes on lime blocks.",
+    "keyCharacteristics": [
+      "Paper and ink base, four accents rotated per item through a local `--accent` variable.",
+      "Syne 800 at poster scale with tight, negative tracking; mono for every label and control.",
+      "Hard offset shadows (no blur) as the signature depth cue; pill shapes for controls, large soft corners for containers.",
+      "Sections open straight on the headline, with no eyebrow or number; ticker bands tilted ±1–1.5° as section breaks.",
+      "Pointer-driven 3D tilt on hero and project cards, disabled on touch and under reduced motion."
+    ],
+    "rules": [
+      {
+        "name": "The Rotating Accent Rule",
+        "body": "Items in a collection (projects, story chapters, skill groups, outfits, interview entries) each take one accent via `.accent-{violet|pink|lime|sky}`, which sets `--accent` and `--on-accent`. Components read `var(--accent)`; they never hard-code an accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Lime-on-Ink Rule",
+        "body": "Acid Lime carries ink text and ink outlines only. Lime text on paper or white is illegible and forbidden.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink-on-Accent Rule",
+        "body": "Text on an accent fill is ink, except on Electric Violet, which takes white (≈5.7:1). White on Hot Pink (≈3.5:1) or Pool Cyan (≈2.4:1) fails AA and is not used. `.accent-*` sets `--on-accent` accordingly.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Headlines are Syne, controls and metadata are Space Mono, prose is Plus Jakarta Sans. No fourth voice, and never body text in mono or labels in Syne.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Emphasis Rule",
+        "body": "A headline highlights exactly one word or short phrase (`<em>`, upright, never italic) in a solid colour. Never a gradient.",
+        "section": "typography"
+      },
+      {
+        "name": "The Printed Shadow Rule",
+        "body": "New shadows are solid offsets, down-right, with zero blur, in ink or the item's accent. If it needs a blur radius, it does not belong to this system.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Lift Rule",
+        "body": "On hover an object translates up-left by the same amount its shadow grows (e.g. −3px/−3px with a 4px shadow) and returns to rest on `:active`.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** give every collection item an accent through `.accent-*` and read `var(--accent)` in the component.",
+      "**Do** express elevation with a solid, zero-blur offset shadow in ink or the accent, paired with an equal up-left lift on hover.",
+      "**Do** use 2px ink borders for anything the user can grab or click, and pills for every control.",
+      "**Do** write labels, buttons and nav in uppercase Space Mono, and headlines in Syne 800 with −0.03em tracking.",
+      "**Do** build grids with `minmax(0, 1fr)` and test copy in all three languages at 320px.",
+      "**Do** show focus with a 3px Electric Violet outline, gate hover motion behind `(hover: hover) and (pointer: fine)`, and give every animation a `prefers-reduced-motion` variant."
+    ],
+    "donts": [
+      "**Don't** add scroll reveals, hover spotlights or infinite loops (pulses, pings); the hero entrance is the page's one choreographed moment.",
+      "**Don't** use blurred colour blobs, gradient text or fills, frosted-glass frames or soft coloured glows.",
+      "**Don't** put an eyebrow, kicker or `(0N)` section number above a heading.",
+      "**Don't** put lime text on paper or white, or white text on Pool Cyan or Hot Pink.",
+      "**Don't** stand Unicode glyphs or emoji in for icons, or present the concept projects as client work.",
+      "**Don't** use blurred drop shadows as elevation.",
+      "**Don't** introduce a fourth typeface or set prose in mono.",
+      "**Don't** hard-code an accent inside a reusable component."
+    ]
+  }
+}

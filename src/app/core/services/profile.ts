@@ -9,7 +9,6 @@ export class Profile {
     name: 'Valentina Andrea Camejo',
     shortName: 'Valentina Camejo',
     role: 'Front-end Developer & UX Engineer',
-    age: 26,
     languages: ['Italiano', 'Español', 'English'],
     available: true,
     email: 'valentina_camejo@outlook.com',

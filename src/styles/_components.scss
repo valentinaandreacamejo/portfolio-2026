@@ -7,13 +7,14 @@
   }
 }
 
-// lime needs dark text on top; the others read well with white
-.accent-violet,
-.accent-pink,
-.accent-sky {
+// Only violet is dark enough for white text (≈5.7:1). White on pink (3.5:1) and
+// cyan (2.4:1) fails AA, so those carry ink like lime does.
+.accent-violet {
   --on-accent: #fff;
 }
 
+.accent-pink,
+.accent-sky,
 .accent-lime {
   --on-accent: var(--color-dark);
 }
@@ -35,16 +36,35 @@
   transition:
     transform 0.35s var(--ease-spring),
     box-shadow 0.35s var(--ease-out-expo),
-    background-color 0.25s;
+    background-color 0.25s,
+    scale 120ms var(--ease-out-expo);
 
-  &:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: 4px 4px 0 var(--color-dark);
+  // lift only with a real pointer: on touch a tap leaves :hover stuck
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 4px 4px 0 var(--color-dark);
+    }
+
+    &--primary:hover {
+      box-shadow: 4px 4px 0 var(--color-accent-pink);
+    }
+
+    &--ghost:hover {
+      background: var(--color-accent-lime);
+    }
   }
 
   &:active {
     transform: translate(0, 0);
     box-shadow: none;
+  }
+
+  // touch: no lift to undo, so the press is a small squeeze
+  @media (hover: none) {
+    &:active {
+      scale: 0.97;
+    }
   }
 
   &:focus-visible {
@@ -55,19 +75,16 @@
   &--primary {
     background: var(--color-dark);
     color: var(--color-accent-lime);
-
-    &:hover {
-      box-shadow: 4px 4px 0 var(--color-accent-pink);
-    }
   }
 
   &--ghost {
     background: transparent;
     color: var(--color-dark);
+  }
 
-    &:hover {
-      background: var(--color-accent-lime);
-    }
+  // reduced motion: the lift still happens, it just doesn't travel
+  @include reduced-motion {
+    transition: box-shadow 0.2s ease, background-color 0.25s;
   }
 }
 
@@ -79,50 +96,24 @@
   gap: 1.25rem;
   margin-bottom: clamp(40px, 6vw, 72px);
 
-  &__index {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--color-accent-violet);
-  }
-
   &__title {
     max-width: 16ch;
     overflow-wrap: break-word;
+    // long IT/ES words on a 320px phone break with a hyphen, not mid-word
+    hyphens: auto;
 
+    // one emphasised word per title, in solid pink (large text: 3.5:1 clears the 3:1 bar)
     em {
       font-style: normal;
-      @include gradient-text;
+      color: var(--color-accent-pink);
     }
   }
 
   &__lead {
-    max-width: 56ch;
+    // ~75 characters at 1.1rem (see the `ch` note in about-story.scss)
+    max-width: 38rem;
     font-size: 1.1rem;
     color: color-mix(in srgb, var(--color-dark) 70%, transparent);
-  }
-}
-
-// ---------- Scroll reveal (driven by RevealDirective) ----------
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition:
-    opacity 0.9s var(--ease-out-expo),
-    transform 0.9s var(--ease-out-expo);
-  transition-delay: var(--reveal-delay, 0ms);
-
-  &.is-visible {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@include reduced-motion {
-  .reveal {
-    opacity: 1;
-    transform: none;
   }
 }
 

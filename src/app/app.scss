@@ -1,0 +1,7 @@
+// The routes are lazy: until the page chunk arrives the shell holds only header and
+// footer. Reserving a full viewport keeps the footer below the fold, so it doesn't
+// flash at the top and then jump (that alone was 0.48 CLS).
+main {
+  display: block;
+  min-height: 100svh;
+}
